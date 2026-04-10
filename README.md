@@ -1,6 +1,6 @@
 # NotesNeo Content Repository
 
-📚 Educational notes content for the [NotesNeo](https://github.com/decodewithdeepak/notesneo) platform.
+📚 Educational notes content for the [NotesNeo](https://github.com/deepakmodidev/notesneo) platform.
 
 ## 📂 Structure
 
@@ -55,6 +55,6 @@ This content is shared for educational purposes. Please respect the original aut
 
 ## 🔗 Related
 
-- **Main App**: [NotesNeo](https://github.com/decodewithdeepak/notesneo)
+- **Main App**: [NotesNeo](https://github.com/deepakmodidev/notesneo)
 - **Website**: [notesneo.vercel.app](https://notesneo.vercel.app)
-- **Author**: [Deepak Modi](https://deepakmodi.tech)
+- **Author**: [Deepak Modi](https://deepakmodi.dev)

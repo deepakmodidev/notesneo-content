@@ -1274,6 +1274,6 @@ Practical ≈ 0.15 × n
 
 ---
 
-_These notes were compiled by [Deepak Modi](https://deepakmodi.tech)_  
+_These notes were compiled by [Deepak Modi](https://deepakmodi.dev)_  
 _Last updated: December 2025_
 

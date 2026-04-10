@@ -1121,5 +1121,5 @@ Manpower Planning → Recruitment (attract) → Selection (choose) → Training 
 
 ---
 
-*These notes were compiled by [Deepak Modi](https://deepakmodi.tech)*  
+*These notes were compiled by [Deepak Modi](https://deepakmodi.dev)*  
 *Last updated: December 2025*

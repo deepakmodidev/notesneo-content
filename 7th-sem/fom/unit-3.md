@@ -621,5 +621,5 @@ Accuracy, Timeliness, Relevance, Completeness, Simplicity, Flexibility, Cost-Eff
 
 ---
 
-*These notes were compiled by [Deepak Modi](https://deepakmodi.tech)*  
+*These notes were compiled by [Deepak Modi](https://deepakmodi.dev)*  
 *Last updated: December 2025*
