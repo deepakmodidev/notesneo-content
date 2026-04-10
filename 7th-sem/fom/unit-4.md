@@ -803,5 +803,5 @@ Selling accounts receivable (customer dues) to factor company for immediate cash
 
 ---
 
-*These notes were compiled by [Deepak Modi](https://deepakmodi.tech)*  
+*These notes were compiled by [Deepak Modi](https://deepakmodi.dev)*  
 *Last updated: December 2025*

@@ -1174,5 +1174,5 @@ S = Aᵇ mod p = 8¹⁵ mod 23 = 35184372088832 mod 23 = 2
 
 ---
 
-_These notes were compiled by [Deepak Modi](https://deepakmodi.tech)_  
+_These notes were compiled by [Deepak Modi](https://deepakmodi.dev)_  
 _Last updated: December 2025_

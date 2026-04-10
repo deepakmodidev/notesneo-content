@@ -1528,6 +1528,6 @@ w = w - α × δ × a
 
 ---
 
-_These notes were compiled by [Deepak Modi](https://deepakmodi.tech)_  
+_These notes were compiled by [Deepak Modi](https://deepakmodi.dev)_  
 _Last updated: December 2025_
 

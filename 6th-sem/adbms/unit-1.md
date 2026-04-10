@@ -1698,6 +1698,6 @@ The query processor performs several key functions:
 
 ---
 
-*These notes were compiled by [Deepak Modi](https://deepakmodi.tech)*      
+*These notes were compiled by [Deepak Modi](https://deepakmodi.dev)*      
 *Visit [NotesNeo](https://notesneo.vercel.app) for more resources.*    
 *Last updated: June 2025*
