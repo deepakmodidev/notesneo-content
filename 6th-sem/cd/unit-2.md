@@ -180,10 +180,6 @@ Parsing Techniques
 
 Top-down parsing starts with the start symbol and attempts to derive the input string by constructing the parse tree from the root downward. It's an intuitive approach that mimics how humans often understand language.
 
-### 2.1 Top-Down Parsing
-
-Top-down parsing starts with the start symbol and attempts to derive the input string by constructing the parse tree from the root downward. It's an intuitive approach that mimics how humans often understand language.
-
 #### Characteristics of Top-Down Parsing:
 
 1. **Construction Direction**: Builds parse tree from root (start symbol) to leaves (terminals).
