@@ -506,6 +506,64 @@ Prediction:
 
 ---
 
+### **3.6 Comparison: Bagging vs Boosting vs Random Forest**
+
+> PYQ: Compare and contrast Boosting, Bagging, and Random Forest as Ensemble Methods. Provide insights into scenarios where each ensemble method is most effective. (2024, 15 marks)
+
+While Bagging, Boosting, and Random Forest are all **ensemble methods**, each combines models differently. Here is a side-by-side comparison.
+
+#### **Side-by-Side Comparison**
+
+| Feature | **Bagging** | **Boosting** | **Random Forest** |
+|---|---|---|---|
+| **Execution** | Parallel | Sequential | Parallel |
+| **Focus** | Reduces variance | Reduces bias | Reduces variance + prevents overfitting |
+| **Model Dependency** | Independent models | Models depend on previous ones | Independent decision trees |
+| **Sample Strategy** | Bootstrap (with replacement) | Re-weighted samples (focus on errors) | Bootstrap + random feature subset |
+| **Base Learner** | Any (often decision trees) | Any (often weak learners) | Always decision trees |
+| **Performance** | Stable results | Higher accuracy but risk of overfitting | Balanced trade-off |
+| **Speed** | Fast (can be parallelized) | Slower (sequential steps) | Moderate |
+| **Aggregation** | Majority vote / average | Weighted sum | Majority vote / average |
+| **Example Algorithm** | Bagged Decision Trees | AdaBoost, XGBoost, Gradient Boosting | Random Forest |
+
+#### **How Each Combines Models to Improve Performance**
+
+**Bagging (Bootstrap Aggregation):**
+- Multiple models are trained **in parallel** on **bootstrapped subsets** of data.
+- Final prediction is a **majority vote** (classification) or **average** (regression).
+- Reduces **variance** and increases **stability** of the model.
+
+**Boosting:**
+- Models are trained **sequentially**, where each new model **focuses on errors** made by the previous one.
+- Misclassified data points are **re-weighted** so the next learner pays more attention to them.
+- Final model is a **weighted sum** of all weak learners — reduces both **bias and variance**.
+
+**Random Forest:**
+- Builds many **decision trees** using bagging **plus** a **random subset of features at each split**.
+- Random feature selection **decorrelates** the trees, which makes the ensemble stronger.
+- Final prediction is a **majority vote** (classification) or **average** (regression).
+
+#### **Use Cases & Effectiveness Scenarios**
+
+| Scenario | Most Effective Method | Why |
+|---|---|---|
+| **High-variance models (e.g., deep decision trees)** | **Bagging** | Reduces variance and prevents overfitting on unstable learners |
+| **High-bias models (e.g., shallow trees, stumps)** | **Boosting** | Iteratively reduces bias by focusing on errors |
+| **Large, high-dimensional datasets** | **Random Forest** | Random feature selection handles many features and resists overfitting |
+| **Need for interpretability** | **Random Forest** | Tree structures + feature importance allow some interpretability |
+| **Anomaly / outlier detection** | **Boosting** (e.g., AdaBoost, Isolation Forest) | Focuses iteratively on hard-to-fit points |
+| **Unstructured / noisy data** | **Bagging** | Averaging reduces noise and increases reliability |
+| **Need for top accuracy on tabular data** | **Boosting** (XGBoost / LightGBM) | Typically delivers state-of-the-art results |
+| **Need for stable, low-tuning baseline** | **Random Forest** | Works well out of the box, minimal hyperparameter tuning |
+
+#### **Summary**
+
+- **Bagging** = best when the base model is **unstable** and overfitting is the problem.
+- **Boosting** = best when the base model is **too simple** and bias is the problem.
+- **Random Forest** = best **all-rounder** — combines the variance-reduction of bagging with the decorrelation of random feature selection, giving balanced, robust performance.
+
+---
+
 ## **Section 4: Model Evaluation**
 
 ### **4.1 Why Evaluate?**

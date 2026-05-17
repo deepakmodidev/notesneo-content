@@ -98,6 +98,162 @@ Imagine you have a 3D sculpture. To describe it to someone, you could draw a 2D 
 
 ---
 
+#### **Advantages of Dimensionality Reduction**
+
+> PYQ: Write advantages and Disadvantages of Dimensionality Reduction. (2023, 7.5 marks)
+
+1. **Data Compression** — reduces storage space needed for the dataset.
+2. **Less Computation Time** — fewer features = faster training.
+3. **Removes Redundant Features** — drops correlated / duplicated columns.
+4. **Improved Visualization** — high-dimensional data can be plotted in 2D / 3D for better understanding.
+5. **Overfitting Prevention** — fewer features reduce model complexity and improve generalization.
+6. **Feature Extraction** — pulls out the most informative features automatically (useful for downstream ML models).
+7. **Data Preprocessing** — acts as a preprocessing step that improves the performance of the actual ML model.
+8. **Improved Performance** — by reducing noise and irrelevant information, the model trains on cleaner signal.
+
+#### **Disadvantages of Dimensionality Reduction**
+
+1. **Information Loss** — some data is always lost when dimensions are reduced.
+2. **Linear Correlations Only** — PCA finds only linear correlations between variables, which is sometimes undesirable.
+3. **Mean/Covariance Insufficient** — PCA fails when mean and covariance are not enough to define the dataset.
+4. **Choosing k is Hard** — we may not know how many principal components to retain; thumb rules are applied in practice.
+5. **Interpretability** — reduced dimensions are not easily interpretable; relationship between original features and new features is hard to explain.
+6. **Overfitting Risk** — in some cases dimensionality reduction itself can lead to overfitting, especially when the number of components is chosen based on the training data.
+7. **Sensitivity to Outliers** — many techniques (like PCA) are sensitive to outliers, which can bias the representation.
+8. **Computational Complexity** — some techniques (e.g., manifold learning) are computationally expensive on large datasets.
+
+---
+
+### **1.4 Feature Selection vs Feature Extraction**
+
+> PYQ: Compare Feature Extraction and Feature Selection techniques. (2022, part of 15 marks)
+
+Both techniques reduce dimensionality, but in **very different ways**.
+
+| # | Feature Selection | Feature Extraction |
+|--|---|---|
+| 1 | Selects a **subset** of relevant features from the original set | Extracts a **new set** of features that are more informative and compact |
+| 2 | Reduces the dimensionality of the feature space and simplifies the model | Captures essential information and represents it in a lower-dimensional feature space |
+| 3 | Categorized into **Filter, Wrapper, Embedded** methods | Categorized into **Linear and Non-linear** methods |
+| 4 | Requires **domain knowledge** and feature engineering | Can be applied to **raw data** without feature engineering |
+| 5 | Improves **interpretability** and reduces overfitting | Improves **model performance** and handles non-linear relationships |
+| 6 | May lose information if wrong features are selected | May introduce noise/redundancy if extracted features are not informative |
+
+**Key takeaway:**
+- **Feature Selection** = keeps original features (just throws some away).
+- **Feature Extraction** = creates new features (e.g., principal components in PCA).
+
+---
+
+### **1.5 Subset Selection Procedure**
+
+> PYQ: Explain how dimensionality can be reduced using subset selection procedure. (2022, part of 15 marks)
+
+**What is Subset Selection?**
+
+**Subset selection** (also called **feature selection**, **variable selection**, or **attribute selection**) is the process of selecting a **subset of relevant features** (variables, predictors) from the original set for use in model construction.
+
+**Why use Subset Selection?**
+
+1. **Simplification** of models — easier to interpret by researchers/users.
+2. **Shorter training times** — fewer features = faster computation.
+3. **Avoid the curse of dimensionality.**
+4. **Enhanced generalization** — reduces overfitting by removing redundant/irrelevant features.
+
+**Central premise:** The data contains many features that are either **redundant** or **irrelevant**, and can be removed without much loss of information.
+
+**Two Main Approaches:**
+
+1. **Forward Selection** — start empty, keep adding features.
+2. **Backward Selection** — start with all, keep removing features.
+
+---
+
+#### **A. Forward Selection**
+
+**Idea:** Start with **no features**, and add them **one at a time** — at each step, add the feature that decreases the validation error the most. Stop when no further addition improves performance.
+
+**Notation:**
+- **n** = number of input variables.
+- **x₁, x₂, ..., xₙ** = input variables.
+- **Fᵢ** = a subset of the set of input variables.
+- **E(Fᵢ)** = error on the validation sample when only the inputs in Fᵢ are used.
+
+**Algorithm:**
+
+```
+1. Set F₀ = ∅  and  E(F₀) = ∞
+
+2. For i = 0, 1, 2, ..., repeat until E(Fᵢ₊₁) ≥ E(Fᵢ):
+
+   (a) For each input variable xⱼ not in Fᵢ:
+         Train the model with input variables Fᵢ ∪ {xⱼ}
+         Calculate E(Fᵢ ∪ {xⱼ}) on the validation set.
+
+   (b) Choose xₘ that causes the least error:
+         m = arg min  E(Fᵢ ∪ {xⱼ})
+                 j
+
+   (c) Set Fᵢ₊₁ = Fᵢ ∪ {xₘ}.
+
+3. The set Fᵢ is output as the best subset.
+```
+
+**Remarks:**
+
+1. **Stopping criterion:** stop if adding any feature does **not** decrease the error E. You may stop earlier if the decrease is too small — a **user-defined threshold** based on application constraints.
+
+2. **Complexity:** To reduce from **n** features to **k** features, we train and test the model:
+
+```
+n + (n-1) + (n-2) + ... + (n-k) times  =  O(n²)
+```
+
+So forward selection can be **expensive** for very high n.
+
+---
+
+#### **B. Backward Selection**
+
+**Idea:** Start with **all features**, and remove them **one at a time** — at each step, remove the feature whose removal causes the **least increase** in error. Stop when removing any feature significantly increases the error.
+
+**Algorithm:**
+
+```
+1. Set F₀ = {x₁, x₂, ..., xₙ}  and  E(F₀) = ∞
+
+2. For i = 0, 1, 2, ..., repeat until E(Fᵢ₊₁) > E(Fᵢ):
+
+   (a) For each input variable xⱼ in Fᵢ:
+         Train the model with input variables Fᵢ − {xⱼ}
+         Calculate E(Fᵢ − {xⱼ}) on the validation set.
+
+   (b) Choose xₘ that causes the least error after removal:
+         m = arg min  E(Fᵢ − {xⱼ})
+                 j
+
+   (c) Set Fᵢ₊₁ = Fᵢ − {xₘ}.
+
+3. The set Fᵢ is output as the best subset.
+```
+
+---
+
+#### **Forward vs Backward Selection — Comparison**
+
+| Aspect | Forward Selection | Backward Selection |
+|---|---|---|
+| **Start** | Empty set ∅ | Full set {x₁, ..., xₙ} |
+| **Operation** | Add features one by one | Remove features one by one |
+| **Stops when** | Adding feature ≥ no improvement | Removing feature increases error |
+| **Speed** | Faster when target subset is **small** | Faster when target subset is **large** |
+| **Risk** | May miss good features that work in **combination** | More accurate, but slower for large n |
+| **Best for** | When you suspect only few features matter | When you suspect most features matter |
+
+**Both are O(n²)** in worst case but **forward is usually preferred** when the optimal subset size k is small (k ≪ n).
+
+---
+
 ## **Section 2: Vectors and Dataset Representation**
 
 ### **2.1 Row Vector**
@@ -172,11 +328,30 @@ Here, each value is one student's Math score — one column = one feature.
 
 ### **2.3 How to Represent a Dataset**
 
-**A dataset is a collection of data points (examples / samples).**
+> PYQ: What is a dataset? Explain with a suitable example. (2024, part of 15 marks)
 
-For ML:
-- Each **row** = one **data point** (one example / observation).
-- Each **column** = one **feature** (attribute / variable).
+**Definition:**
+
+A **dataset** is a **structured collection of data** used for analysis, training, and testing in machine learning. It typically consists of **rows** and **columns**, where:
+
+- Each **row** represents a single **instance** or **data point** (one example / observation / sample).
+- Each **column** represents a **feature** (also called an *attribute* or *variable*).
+- Optionally, one column is the **label** (also called the *target variable*) — the value the model must predict.
+
+**Example Dataset — Purchase Prediction:**
+
+| Person | Age | Income | Purchased |
+|---|---|---|---|
+| A | 25 | 50k | No |
+| B | 35 | 60k | Yes |
+| C | 45 | 80k | Yes |
+| D | 20 | 30k | No |
+
+Here:
+- **Features:** Age, Income
+- **Label (target):** Purchased
+- **Rows (m=4):** number of samples
+- **Columns:** 2 features + 1 label
 
 **Example Dataset (5 students, 3 subjects):**
 
@@ -244,6 +419,54 @@ Shape: 5 × 3   (5 students, 3 features)
 | m=1 | 1 × n | Row vector (one sample) |
 | n=1 | m × 1 | Column vector (one feature) |
 | m=n | n × n | Square matrix |
+
+---
+
+### **2.5 Advantages of Matrix Representation in Machine Learning**
+
+> PYQ: Discuss the advantages of matrix representation in Machine Learning. (2024, part of 15 marks)
+
+Why do almost all ML algorithms internally represent the dataset as a matrix? Because it unlocks a set of powerful, fast operations from **linear algebra**.
+
+**1. Efficient Computation**
+
+Most ML algorithms (e.g. **Linear Regression**, **Logistic Regression**, **Neural Networks**) are built on top of **linear algebra**. Matrix representation enables **fast calculations** using highly optimized libraries (NumPy, BLAS, LAPACK).
+
+**2. Scalability**
+
+Matrix form can handle **very large datasets** efficiently using operations like **matrix multiplication** and **dot products** — far faster than per-element Python loops.
+
+**3. Parallelization**
+
+Matrix operations can be **parallelized easily** on multi-core CPUs and especially on **GPUs**. This is why deep learning frameworks (PyTorch, TensorFlow) push everything into matrix form — it makes training **orders of magnitude faster**.
+
+**4. Vectorization**
+
+Vectorized matrix code **avoids slow Python loops** by replacing them with single matrix operations. The result is **cleaner code** and **massively faster execution** — a core principle behind every modern ML library.
+
+**5. Ease of Mathematical Transformation**
+
+Common preprocessing steps — **feature scaling, normalization, standardization, PCA** — are all **defined as matrix operations**. Once data is in matrix form, applying any of these is just one line of math.
+
+**6. Uniform Representation**
+
+A matrix gives a **single, uniform structure** for any dataset — images, text embeddings, sensor logs, tabular records — they all become an `m × n` matrix that any algorithm can consume.
+
+**7. Compatibility with Optimization Algorithms**
+
+Optimization techniques like **gradient descent** rely on matrix calculus (Jacobians, Hessians). Matrix form is **mandatory** for these to work efficiently.
+
+**Summary Table:**
+
+| Advantage | Why It Matters in ML |
+|---|---|
+| Efficient computation | Fast linear-algebra-backed training |
+| Scalability | Handles millions of rows / features |
+| Parallelization | Runs on GPUs in parallel |
+| Vectorization | Replaces loops with single ops |
+| Easy transformations | Scaling, PCA, normalization in one line |
+| Uniform representation | Works for any data type |
+| Optimization-friendly | Required by gradient descent and friends |
 
 ---
 
