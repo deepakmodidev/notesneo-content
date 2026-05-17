@@ -14,11 +14,30 @@ pdfUrl: ""
 
 ## 🎯 PYQ Analysis for Unit 3
 
-> PYQs will be added after analysis — check back soon.
+### **High Priority Topics** (15 marks questions)
+
+1. **Decision Trees (Algorithm + Types)** — (2024: 15 marks, 2023: 15 marks)
+2. **Naive Bayes (Assumptions, Working, Why "Naive")** — (2023: 15 marks, 2022: 7.5 marks)
+3. **Support Vector Machine (Goal + Margin)** — (2022: 15 marks)
+4. **Supervised Learning (Definition + Working Principle)** — (2024: 15 marks)
+5. **Importance of Labelled Data + Decision Trees** — (2024: 15 marks)
+6. **Regression (with Example)** — (2022: 7.5 marks)
+
+### **Medium Priority Topics** (Short answers)
+
+1. **Support Vectors** — 2023 (2.5 marks)
+2. **K-NN as Lazy Learner** — 2023 (2.5 marks)
+3. **Underfitting** — 2023 (2.5 marks)
+4. **Logistic Regression** — 2023 (2.5 marks)
+5. **Linear Regression** — 2022 (2.5 marks)
 
 ---
 
 ## **Section 1: Supervised Learning — Overview**
+
+> PYQ: Define Supervised Learning and explain its working principle. Provide a step-by-step example of how a supervised learning algorithm processes training data and makes predictions. (2024, 15 marks)  
+> PYQ: Discuss the importance of labelled data in Supervised Learning and its role in training predictive models. Also, explain Decision Trees by taking a suitable example. (2024, 15 marks)  
+> PYQ: Underfitting. (2023, 2.5 marks)
 
 ### **1.1 Definition**
 
@@ -55,6 +74,8 @@ pdfUrl: ""
 ---
 
 ## **Section 2: k-Nearest Neighbours (k-NN)**
+
+> PYQ: K-NN is called Lazy Learner. Explain it. (2023, 2.5 marks)
 
 ### **2.1 What is k-NN?**
 
@@ -200,6 +221,9 @@ d(Q, D) = √[(3-5)² + (3-4)²] = √[4+1]   = √5   ≈ 2.24
 ---
 
 ## **Section 3: Naïve Bayes**
+
+> PYQ: Explain Naive Bayes Classifier. (2022, 7.5 marks)  
+> PYQ: What are the basic assumptions used in Naive Bayes classifier? Why is it called Naive Bayes? Also discuss the working of Naive Bayes algorithm. (2023, 15 marks)
 
 ### **3.1 What is Naïve Bayes?**
 
@@ -354,6 +378,9 @@ P(Xᵢ | C) = ─────────────────────
 ---
 
 ## **Section 4: Decision Trees**
+
+> PYQ: Explain Decision Trees algorithm in ML and discuss its types. (2023, 15 marks)  
+> PYQ: Explain Decision Trees by taking a suitable example. (2024, part of 15 marks)
 
 ### **4.1 What is a Decision Tree?**
 
@@ -542,6 +569,9 @@ If Outlook has the highest IG among all features → it becomes the **root node*
 
 ## **Section 5: Linear Regression**
 
+> PYQ: Explain Linear Regression. (2022, 2.5 marks)  
+> PYQ: Explain regression with an example. (2022, 7.5 marks)
+
 ### **5.1 What is Linear Regression?**
 
 **Definition:**
@@ -691,6 +721,8 @@ Predict for X=5:  Ŷ = 40 + 10×5 = 90 marks
 
 ## **Section 6: Logistic Regression**
 
+> PYQ: Explain Logistic Regression. (2023, 2.5 marks)
+
 ### **6.1 What is Logistic Regression?**
 
 **Definition:**
@@ -779,6 +811,9 @@ Weights are updated using **gradient descent** to minimize J(w).
 ---
 
 ## **Section 7: Support Vector Machines (SVM)**
+
+> PYQ: What is the goal of the Support Vector Machine (SVM)? Also discuss the margin. (2022, 15 marks)  
+> PYQ: Support Vectors. (2023, 2.5 marks)
 
 ### **7.1 What is SVM?**
 
@@ -961,7 +996,26 @@ MSE:                  (1/m) Σ(yᵢ - ŷᵢ)²
 
 ## **Expected Exam Questions**
 
-> PYQs will be added after analysis — check back soon.
+### **15-Mark Questions:**
+
+1. What is the goal of the Support Vector Machine (SVM)? Also discuss the margin. *(2022)*
+2. Explain Decision Trees algorithm in ML and discuss its types. *(2023)*
+3. What are the basic assumptions used in Naive Bayes classifier? Why is it called Naive Bayes? Also discuss the working of Naive Bayes algorithm. *(2023)*
+4. Define Supervised Learning and explain its working principle. Provide a step-by-step example of how a supervised learning algorithm processes training data and makes predictions. *(2024)*
+5. Discuss the importance of labelled data in Supervised Learning and its role in training predictive models. Also, explain Decision Trees by taking a suitable example. *(2024)*
+
+### **Short Answer Questions (2.5 marks):**
+
+1. Explain Linear Regression. *(2022)*
+2. Support Vectors. *(2023)*
+3. K-NN is called Lazy Learner. Explain it. *(2023)*
+4. Underfitting. *(2023)*
+5. Logistic Regression. *(2023)*
+
+### **Mixed (7.5 marks):**
+
+1. Explain Naive Bayes Classifier. *(2022)*
+2. Explain regression with an example. *(2022)*
 
 ---
 

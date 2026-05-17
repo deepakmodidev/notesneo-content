@@ -14,13 +14,30 @@ pdfUrl: ""
 
 ## 🎯 PYQ Analysis for Unit 1
 
-> PYQs will be added after analysis — check back soon.
+### **High Priority Topics** (15 marks questions)
+
+1. **Definition of Machine Learning + Importance** — (2024: 15 marks, 2023: 15 marks, 2022: 15 marks)
+2. **Block Diagram of Learning Machines** — (2024: 15 marks)
+3. **Types of ML (Supervised vs Unsupervised vs Reinforcement)** — (2023: 15 marks, 2022: 7.5 marks)
+4. **Features of ML Algorithms** — (2024: 15 marks)
+5. **Applications of Machine Learning** — (2023: 15 marks, 2022: 7.5 marks)
+
+### **Medium Priority Topics** (Short answers)
+
+1. **Three main types of ML classification** — 2024 (2.5 marks)
+2. **Definition of "Learning" (Tom Mitchell)** — 2022 (2.5 marks)
+3. **Reinforcement Learning** — 2022 (2.5 marks)
 
 ---
 
 ## **Section 1: Introduction to Machine Learning**
 
 ### **1.1 What is Machine Learning?**
+
+> PYQ: Define Machine Learning. Explain with examples why machine learning is important. (2022, 15 marks)  
+> PYQ: What is Machine Learning? Explain its importance and applications in the modern world. (2023, 15 marks)  
+> PYQ: What is machine learning? Describe the features of Machine Learning algorithms and their importance in building predictive models. (2024, 15 marks)  
+> PYQ: Explain "Learning". (2022, 2.5 marks)
 
 **Definition:**
 
@@ -130,6 +147,8 @@ A bank gets **millions of credit card transactions per day**. Manually checking 
 
 ### **1.4 Features (Characteristics) of Machine Learning**
 
+> PYQ: Describe the features of Machine Learning algorithms and their importance in building predictive models. (2024, 15 marks)
+
 Machine Learning has several distinguishing features that make it powerful and unique.
 
 **1. Automatic Learning from Data:**
@@ -167,6 +186,8 @@ Machine Learning has several distinguishing features that make it powerful and u
 ---
 
 ## **Section 2: Block Diagrammatic Representation of Learning Machines**
+
+> PYQ: Create a detailed block diagrammatic representation of learning machines, highlighting the key components and their roles in the Machine Learning process. (2024, 15 marks)
 
 ### **2.1 What is a Learning Machine?**
 
@@ -272,6 +293,9 @@ Every ML system follows the same general flow — input goes in, the algorithm t
 ---
 
 ## **Section 3: Classification of Machine Learning**
+
+> PYQ: Discuss different types of Machine Learning techniques with suitable example. (2023, 15 marks)  
+> PYQ: What are the three main types of Machine Learning classification? (2024, 2.5 marks)
 
 ### **3.1 Types of Machine Learning**
 
@@ -441,6 +465,8 @@ Training Data (no labels):
 
 ### **3.4 Reinforcement Learning**
 
+> PYQ: Explain Reinforcement Learning. (2022, 2.5 marks)
+
 **Definition:**
 
 **Reinforcement Learning (RL)** is a type of Machine Learning where an **agent** interacts with an **environment** and learns by getting **rewards** for correct actions and **penalties** for wrong ones. The goal is to **maximize the total reward** over time.
@@ -504,6 +530,8 @@ Training Data (no labels):
 ---
 
 ### **3.5 Comparison of the Three ML Types**
+
+> PYQ: Differentiate between Supervised, Unsupervised and Reinforcement learning. Explain with suitable examples. (2022, 7.5 marks)
 
 | Feature | Supervised | Unsupervised | Reinforcement |
 |---------|-----------|--------------|----------------|
@@ -669,6 +697,9 @@ The goal is to convert **raw data into a working ML system** that solves a real 
 
 ## **Section 5: Applications of Machine Learning**
 
+> PYQ: Discuss any five examples of machine learning applications. (2022, 7.5 marks)  
+> PYQ: Explain applications of Machine Learning in the modern world. (2023, part of 15 marks)
+
 Machine Learning has quietly become a part of our **daily lives**. Below are major application areas, with real examples.
 
 ### **5.1 Healthcare**
@@ -792,7 +823,24 @@ Healthcare • Finance • E-commerce • Social Media • Transportation • NL
 
 ## **Expected Exam Questions**
 
-> PYQs will be added after analysis — check back soon.
+### **15-Mark Questions:**
+
+1. Define Machine Learning. Explain with examples why machine learning is important. *(2022)*
+2. What is Machine Learning? Explain its importance and applications in the modern world. *(2023)*
+3. What is machine learning? Describe the features of Machine Learning algorithms and their importance in building predictive models. *(2024)*
+4. Create a detailed block diagrammatic representation of learning machines, highlighting the key components and their roles in the Machine Learning process. *(2024)*
+5. Discuss different types of Machine Learning techniques with suitable example. *(2023)*
+
+### **Short Answer Questions (2.5 marks):**
+
+1. Explain Learning. *(2022)*
+2. Explain Reinforcement Learning. *(2022)*
+3. What are the three main types of Machine Learning classification? *(2024)*
+
+### **Mixed (7.5 marks):**
+
+1. Differentiate between Supervised, Unsupervised and Reinforcement learning with suitable examples. *(2022)*
+2. Discuss any five examples of machine learning applications. *(2022)*
 
 ---
 

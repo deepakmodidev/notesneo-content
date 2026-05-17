@@ -14,7 +14,19 @@ pdfUrl: ""
 
 ## 🎯 PYQ Analysis for Unit 4
 
-> PYQs will be added after analysis — check back soon.
+### **High Priority Topics** (15 marks questions)
+
+1. **Bagging vs Boosting vs Random Forest** — (2024: 15 marks, 2023: 15 marks)
+2. **ROC and AUC** — (2024: 15 marks, 2023: 7.5 marks, 2022: 7.5 marks)
+3. **Confusion Matrix** — (2023: 7.5 marks, 2022: 7.5 marks)
+4. **K-Means Algorithm with Example** — (2022: 7.5 marks)
+5. **Random Forest Algorithm** — (2022: 7.5 marks)
+
+### **Medium Priority Topics** (Short answers)
+
+1. **Boosting** — 2022 (2.5 marks)
+2. **Median Absolute Deviation (MAD)** — 2023 (2.5 marks), 2022 (2.5 marks)
+3. **F1-Score** — 2023 (2.5 marks)
 
 ---
 
@@ -46,6 +58,8 @@ Input:   X₁, X₂, X₃, ..., Xₘ   (no labels)
 ---
 
 ## **Section 2: K-Means Clustering**
+
+> PYQ: Explain the k-Means Algorithm with an example. (2022, 7.5 marks)
 
 ### **2.1 What is Clustering?**
 
@@ -234,6 +248,8 @@ WCSS
 
 ## **Section 3: Ensemble Methods**
 
+> PYQ: Compare and contrast Boosting, Bagging, and Random Forest as Ensemble Methods in Unsupervised Learning. Discuss how these methods combine multiple models and improve the overall performance. Provide insights into scenarios where each ensemble method is most effective. (2024, 15 marks)
+
 ### **3.1 What are Ensemble Methods?**
 
 **Definition:**
@@ -324,6 +340,8 @@ Prediction for new point X:
 
 ### **3.3 Boosting**
 
+> PYQ: Explain Boosting. (2022, 2.5 marks)
+
 **Definition:**
 
 **Boosting** trains models **sequentially**. Each new model focuses on correcting the **mistakes** of the previous model by giving higher weight to misclassified samples.
@@ -393,6 +411,8 @@ Final prediction:
 
 ### **3.4 Bagging vs Boosting**
 
+> PYQ: Differentiate between Bagging and Boosting techniques. (2023, 15 marks)
+
 | Feature | Bagging | Boosting |
 |---------|---------|----------|
 | **Training** | Parallel | Sequential |
@@ -406,6 +426,8 @@ Final prediction:
 ---
 
 ### **3.5 Random Forest**
+
+> PYQ: Describe the Random Forest algorithm to improve classifier accuracy. (2022, 7.5 marks)
 
 **Definition:**
 
@@ -493,6 +515,9 @@ A trained model must be tested on **unseen data** to check if it generalizes wel
 ---
 
 ### **4.2 Confusion Matrix**
+
+> PYQ: Confusion Matrix. (2023, 7.5 marks)  
+> PYQ: Confusion Matrix. (2022, 7.5 marks)
 
 **Definition:**
 
@@ -619,6 +644,8 @@ Recall = 4 / (4+2) = 4/6 ≈ 0.67 = 67%
 
 ### **4.7 F1-Score**
 
+> PYQ: F1-score. (2023, 2.5 marks)
+
 **Definition:**
 
 **F1-Score** is the **harmonic mean** of Precision and Recall. It balances both when you need a single metric.
@@ -653,6 +680,10 @@ F1 = 2 × 0.80 × 0.67 / (0.80 + 0.67)
 ---
 
 ### **4.8 ROC Curve and AUC**
+
+> PYQ: Explain ROC and AUC. (2022, 7.5 marks)  
+> PYQ: ROC and AUC. (2023, 7.5 marks)  
+> PYQ: Describe the Receiver Operating Characteristic (ROC) curve and Area Under the Curve (AUC) as evaluation metrics for binary classification models. How does the ROC curve visualize the trade-off between a true positive rate and a false positive rate? What insights can be derived from the AUC value? (2024, 15 marks)
 
 #### **ROC Curve**
 
@@ -726,6 +757,9 @@ TPR
 ---
 
 ### **4.9 Median Absolute Deviation (MAD)**
+
+> PYQ: Median Absolute Deviation (MAD). (2022, 2.5 marks)  
+> PYQ: Median Absolute Deviation. (2023, 2.5 marks)
 
 **Definition:**
 
@@ -881,7 +915,24 @@ MAD       = median(|yᵢ - median(y)|)
 
 ## **Expected Exam Questions**
 
-> PYQs will be added after analysis — check back soon.
+### **15-Mark Questions:**
+
+1. Differentiate between Bagging and Boosting techniques. *(2023)*
+2. Compare and contrast Boosting, Bagging, and Random Forest as Ensemble Methods. Discuss how these methods combine multiple models and improve overall performance. Provide insights into scenarios where each ensemble method is most effective. *(2024)*
+3. Describe the Receiver Operating Characteristic (ROC) curve and Area Under the Curve (AUC) as evaluation metrics for binary classification models. How does the ROC curve visualize the trade-off between TPR and FPR? What insights can be derived from the AUC value? *(2024)*
+
+### **Short Answer Questions (2.5 marks):**
+
+1. Boosting. *(2022)*
+2. Median Absolute Deviation (MAD). *(2022, 2023)*
+3. F1-score. *(2023)*
+
+### **Mixed (7.5 marks):**
+
+1. Explain the k-Means Algorithm with an example. *(2022)*
+2. Describe the Random Forest algorithm to improve classifier accuracy. *(2022)*
+3. ROC and AUC. *(2022, 2023)*
+4. Confusion Matrix. *(2022, 2023)*
 
 ---
 

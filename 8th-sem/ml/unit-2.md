@@ -14,7 +14,21 @@ pdfUrl: ""
 
 ## 🎯 PYQ Analysis for Unit 2
 
-> PYQs will be added after analysis — check back soon.
+### **High Priority Topics** (15 marks questions)
+
+1. **PCA — Definition, Steps, Advantages & Disadvantages** — (2023: 15 marks, 2022: 15 marks)
+2. **Data Preprocessing (Normalization, Mean, Standardization, Covariance)** — (2024: 15 marks)
+3. **Dataset as a Matrix + Advantages of Matrix Representation** — (2024: 15 marks)
+4. **Feature Extraction vs Feature Selection (Subset Selection)** — (2022: 15 marks)
+5. **Dimensionality Reduction (Advantages & Disadvantages)** — (2023: 15 marks)
+
+### **Medium Priority Topics** (Short answers)
+
+1. **Dimensionality Reduction (Definition + Importance)** — 2024 (2.5 marks)
+2. **Column Vector** — 2024 (2.5 marks)
+3. **Dataset as a Matrix** — 2024 (2.5 marks)
+4. **PCA — Dimensionality Reduction** — 2024 (2.5 marks)
+5. **Two Data Preprocessing Techniques** — 2024 (2.5 marks)
 
 ---
 
@@ -35,6 +49,9 @@ If there are **100 features**, we say the dataset has **100 dimensions**.
 
 ### **1.2 What is Dimensionality Reduction?**
 
+> PYQ: What is Dimensionality reduction? (2023, 7.5 marks)  
+> PYQ: Define Dimensionality Reduction and why it is important in Machine Learning? (2024, 2.5 marks)
+
 **Definition:**
 
 **Dimensionality Reduction** is the process of **reducing the number of features (dimensions)** in a dataset while **retaining as much important information as possible**.
@@ -48,6 +65,9 @@ Imagine you have a 3D sculpture. To describe it to someone, you could draw a 2D 
 ---
 
 ### **1.3 Why is Dimensionality Reduction Needed?**
+
+> PYQ: Write advantages and Disadvantages of Dimensionality Reduction. (2023, 7.5 marks)  
+> PYQ: Compare Feature Extraction and Feature Selection techniques. Explain how dimensionality can be reduced using subset selection procedure. (2022, 15 marks)
 
 **The Curse of Dimensionality:**
 - As features increase, the data becomes **sparse** in the high-dimensional space.
@@ -107,6 +127,8 @@ Here, each value is a score in a subject — one row = one student.
 ---
 
 ### **2.2 Column Vector**
+
+> PYQ: Explain column vector. (2024, 2.5 marks)
 
 **Definition:**
 
@@ -173,6 +195,9 @@ For ML:
 
 ### **2.4 How to Represent a Dataset as a Matrix**
 
+> PYQ: How do you represent a dataset as a Matrix? (2024, 2.5 marks)  
+> PYQ: What is a dataset? Explain with a suitable example. Demonstrate how to represent a dataset as a Matrix. Discuss the advantages of matrix representation in Machine Learning. (2024, 15 marks)
+
 The dataset is stored as a **2D matrix X** of shape **(m × n)**:
 - **m** = number of rows (data points / samples)
 - **n** = number of columns (features / dimensions)
@@ -223,6 +248,9 @@ Shape: 5 × 3   (5 students, 3 features)
 ---
 
 ## **Section 3: Data Preprocessing in Machine Learning**
+
+> PYQ: Discuss two techniques used in Data preprocessing Machine Learning. (2024, 2.5 marks)  
+> PYQ: Describe the process of Data preprocessing in Machine Learning, focusing on Feature Normalization, Mean calculation, column standardization, and Covariance estimation. (2024, 15 marks)
 
 ### **3.1 Why Preprocess Data?**
 
@@ -528,6 +556,10 @@ Cov(F1,F2) = [(-2)(-2) + (0)(0) + (2)(2)] / 3
 ---
 
 ## **Section 4: Principal Component Analysis (PCA)**
+
+> PYQ: Explain PCA with its advantages and disadvantages. (2022, 15 marks)  
+> PYQ: What is PCA? Write down steps of a PCA algorithm with example. (2023, 15 marks)  
+> PYQ: What is PCA, and how does it help with dimensionality reduction? (2024, 2.5 marks)
 
 ### **4.1 What is PCA?**
 
@@ -864,7 +896,22 @@ Reduced dataset: [-1.90, -0.64, 0.64, 1.90]
 
 ## **Expected Exam Questions**
 
-> PYQs will be added after analysis — check back soon.
+### **15-Mark Questions:**
+
+1. Explain PCA with its advantages and disadvantages. *(2022)*
+2. Compare Feature Extraction and Feature Selection techniques. Explain how dimensionality can be reduced using subset selection procedure. *(2022)*
+3. What is PCA? Write down steps of a PCA algorithm with example. *(2023)*
+4. (a) What is Dimensionality reduction? (b) Write advantages and disadvantages of Dimensionality Reduction. *(2023)*
+5. What is a dataset? Explain with a suitable example. Demonstrate how to represent a dataset as a Matrix. Discuss the advantages of matrix representation in Machine Learning. *(2024)*
+6. Describe the process of Data preprocessing in Machine Learning, focusing on Feature Normalization, Mean calculation, column standardization, and Covariance estimation. *(2024)*
+
+### **Short Answer Questions (2.5 marks):**
+
+1. Define Dimensionality Reduction and why it is important in Machine Learning. *(2024)*
+2. Explain column vector. *(2024)*
+3. How do you represent a dataset as a Matrix? *(2024)*
+4. Discuss two techniques used in Data preprocessing Machine Learning. *(2024)*
+5. What is PCA, and how does it help with dimensionality reduction? *(2024)*
 
 ---
 
