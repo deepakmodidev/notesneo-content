@@ -14,11 +14,34 @@ pdfUrl: ""
 
 ## 🎯 PYQ Analysis for Unit 2
 
-> PYQs will be added after analysis — check back soon.
+### **High Priority Topics** (15 marks questions)
+
+1. **RDBMS vs NoSQL — Compare and Contrast** — (2024: 15 marks, 2023: 15 marks)
+2. **NoSQL — Types, SQL vs NoSQL** — (2023: 15 marks)
+3. **Data Marts — Types, Advantages, Disadvantages** — (2023: 15 marks) — see **Section 3.2** (now with advantages/disadvantages lists)
+4. **Data Lakes vs Data Marts** — (2024: 8 marks)
+5. **ETL Processes & Data Pipelines in Data Lakes** — (2024: 7 marks)
+6. **RDBMS Features and Architecture** — (2023: 15 marks) — see **Section 1.5 RDBMS Architecture** (10-component block diagram)
+7. **File Formats in Big Data (Parquet, ORC, Avro, JSON, CSV)** — (2023: 15 marks)
+8. **Types of Data (structured, semi, unstructured)** — (2022: 15 marks)
+9. **Cassandra — Detailed Note** — (2024: 7.5 marks) — see **Section 5.4**
+
+### **Medium Priority Topics** (Short answers)
+
+1. **Data Mart (definition)** — 2022 (2.5 marks)
+2. **ETL** — 2022 (2.5 marks)
+3. **ELT** — 2023 (2.5 marks)
+4. **MongoDB** — 2023 (2.5 marks) — see **Section 2.4 MongoDB — Detailed Note**
+5. **Sources of data using service bindings** — 2023 (2.5 marks)
+6. **RDBMS vs NoSQL (short)** — 2024 (2.5 marks)
 
 ---
 
 ## **Section 1: RDBMS**
+
+> PYQ: Explain RDBMS features and architecture in detail. (2023, 15 marks)  
+> PYQ: Compare and contrast RDBMS and NoSQL. (2024, 2.5 marks)  
+> PYQ: Compare and contrast Relational Database Management System (RDBMS) and NoSQL database in the context of Big Data storage and Management. Discuss the advantages and disadvantages of each approach. (2024, 15 marks)
 
 ### **1.1 What is RDBMS?**
 
@@ -81,7 +104,93 @@ RDBMS guarantees data integrity through **ACID properties**:
 
 ---
 
+### **1.5 RDBMS Architecture**
+
+> PYQ: Explain RDBMS features and architecture in detail. (2023, 15 marks)
+
+The RDBMS architecture is a **layered system** that manages how data flows from users (analysts, programmers, DBAs) down to the physical disk while preserving correctness, performance, and recoverability.
+
+**Block Diagram:**
+
+```
+            ┌────────────────────────────────────────────────┐
+            │   Application Programmer        Data Analyst    │
+            │  (writes Java / C programs)   (writes SQL)      │
+            │            │                         │          │
+            ▼            ▼                         ▼          
+   ┌────────────────────────┐    ┌────────────────────────┐
+   │ (2) Application Compiler│    │ (4) Query Compiler     │
+   │ → Compiled App Programs │    │ → Compiled Queries     │
+   └──────────┬─────────────┘    └──────────┬─────────────┘
+              │        ┌────────────────────┤
+              │        ▼                    ▼
+              │  ┌────────────────────────────────┐
+              │  │ (3) DBA + Command Processor    │
+              │  │  DDL: CREATE / DROP / ALTER    │
+              │  └────────────────┬───────────────┘
+              │                   ▼
+              │            ┌──────────────────────┐
+              │            │ (5) Query Optimiser  │
+              │            └──────────┬───────────┘
+              ▼                       ▼
+        ┌──────────────────────────────────────────┐
+        │       (6) RDBMS Runtime System           │
+        │   (executes queries & app programs)      │
+        └─────┬──────────────────────────┬─────────┘
+              │                          │
+              ▼                          ▼
+   ┌──────────────────────┐    ┌──────────────────────┐
+   │ (7) Buffer Manager   │    │ (8) Transaction Mgr  │
+   │   (paging in RAM)    │    │   (Atomicity)        │
+   └──────────┬───────────┘    └──────────┬───────────┘
+              │                           │
+              │                           ▼
+              │                  ┌──────────────────┐
+              │                  │   (9) Log        │
+              │                  │ (txn records)    │
+              │                  └────────┬─────────┘
+              │                           │
+              │                           ▼
+              │                ┌────────────────────────┐
+              │                │ (10) Recovery Manager  │
+              │                │  (undo partial txns)   │
+              │                └───────────┬────────────┘
+              ▼                            ▼
+        ┌──────────────────────────────────────────┐
+        │ (1) Secondary Storage Device (Disk/Tape) │
+        │     Data │ Metadata │ Logs               │
+        └──────────────────────────────────────────┘
+```
+
+**Components Explained:**
+
+1. **Secondary Storage Device (Disk / Tape):** The physical storage layer that permanently holds the actual **Data**, **Metadata** (schema, indexes, statistics), and **Logs**. Every other component eventually reads from or writes to this layer.
+
+2. **Application Compiler:** Compiles application programs written by **Application Programmers** in high-level languages (Java, C, etc.) that contain embedded database calls into **compiled application programs** the runtime system can execute.
+
+3. **Database Administrator (DBA) + Command Processor:** The DBA defines the **structure of the database** using **DDL (Data Definition Language)** — creating and dropping tables, adding/removing columns, defining **integrity constraints**, and setting **access control / permissions**. The command processor parses these DDL statements.
+
+4. **Query Compiler:** Compiles SQL queries (typically written by a **Data Analyst** role) into an internal executable representation, including parsing, semantic checks, and producing a logical query plan.
+
+5. **Query Optimiser:** Uses **relational algebra properties**, indexes, and statistics to choose the most efficient physical execution plan (which join order, which index, which algorithm) for the compiled query.
+
+6. **RDBMS Runtime System:** The execution engine — it runs the optimised query plans and the compiled application programs, calling into the buffer manager and transaction manager as needed.
+
+7. **Buffer Manager:** Temporarily caches database pages in **main memory (RAM)** using a **paging algorithm** so frequently used data does not need a disk read every time. This is what makes RDBMS operations fast.
+
+8. **Transaction Manager:** Enforces the **Atomicity** property — a transaction either fully completes or has no effect at all. *Example:* if a bank transfer debits Account A but the system crashes before crediting Account B, the transaction manager ensures the debit is rolled back so money is not lost.
+
+9. **Log:** A sequential record of every transaction's actions (before/after images, commits, aborts). Even if the system crashes, the log preserves enough information to undo partial transactions or redo committed ones.
+
+10. **Recovery Manager:** On failure or restart, reads the **log** and undoes incomplete transactions (and redoes committed-but-not-flushed ones) so the database returns to a **consistent steady state**.
+
+---
+
 ## **Section 2: NoSQL**
+
+> PYQ: Write short note on MongoDB. (2023, 2.5 marks)  
+> PYQ: What is NoSQL? Explain different types of NoSQL databases with example. Differentiate SQL and NoSQL with example. (2023, 15 marks)  
+> PYQ: Write short note on Cassandra. (2024, 7.5 marks)
 
 ### **2.1 What is NoSQL?**
 
@@ -204,7 +313,65 @@ user002   | name="Ankit"          | math=75
 
 ---
 
+### **2.4 MongoDB — Detailed Note**
+
+> PYQ: Write short note on MongoDB. (2023, 2.5 marks)
+
+**Definition:**
+
+**MongoDB** is an **open-source, document-oriented NoSQL database** that stores data **not in tables** but as flexible JSON-like documents. It was released in **February 2009** by **MongoDB Inc.** and is distributed under the **SSPL (Server Side Public License)**.
+
+**Supported Drivers (official client libraries):**
+
+C, C++, C#, .Net, Go, Java, Node.js, Perl, PHP, Python, Motor, Ruby, Scala, Swift, and Mongoid.
+
+**Major Companies Using MongoDB:** Facebook, Nokia, eBay, Adobe, and Google.
+
+**How MongoDB Works (Hierarchy):**
+
+```
+┌──────────────────────────────────────────────────┐
+│              MongoDB Server                      │
+│  ┌──────────────┐   ┌──────────────┐             │
+│  │  Database 1  │   │  Database 2  │   ...       │
+│  └──────┬───────┘   └──────────────┘             │
+│         │                                        │
+│         ▼                                        │
+│  ┌────────────────┐                              │
+│  │  Collection A  │  (like a "table")            │
+│  └──────┬─────────┘                              │
+│         │                                        │
+│         ▼                                        │
+│  ┌────────────────────────────────────────────┐  │
+│  │  Document (BSON)                           │  │
+│  │   { "_id": 1,                              │  │
+│  │     "name": "Deepak",                      │  │
+│  │     "skills": ["BDA","ML"],                │  │
+│  │     "address": { "city":"Jaipur" } }       │  │
+│  └────────────────────────────────────────────┘  │
+└──────────────────────────────────────────────────┘
+```
+
+- A **server** hosts multiple **databases**.
+- Each database contains one or more **collections** (analogous to tables in RDBMS).
+- Each collection holds many **documents**.
+- Each document is a set of **fields** stored as **key-value pairs**.
+
+**Key Features:**
+
+- **BSON storage:** Documents are written as JSON by the user but the backend stores them as **BSON (Binary JSON)** — a binary-encoded form that is faster to parse and more space-efficient for querying.
+- **Schema-less:** Two documents in the same collection can have **completely different fields**. No `ALTER TABLE` needed to add a new attribute.
+- **Nested documents:** Sub-documents and arrays can be embedded inside a document, so **complex SQL-style joins are usually unnecessary**.
+- **Maximum BSON document size:** **16 MB** per document (larger blobs are handled via GridFS).
+- **Horizontal scaling:** Built-in sharding and replication for distributing data across machines.
+
+---
+
 ## **Section 3: Data Warehouses, Data Marts, and Data Lakes**
+
+> PYQ: Explain Data Mart. (2022, 2.5 marks)  
+> PYQ: Define Data Mart. Explain different types of data marts with example. Also discuss advantages and disadvantages of data marts. (2023, 15 marks)  
+> PYQ: Explain the concept of Data lakes and how they are different from data marts. (2024, 8 marks)
 
 ### **3.1 Data Warehouse**
 
@@ -258,6 +425,18 @@ A **Data Mart** is a **smaller, focused subset** of a data warehouse that serves
 | **Independent Mart** | Created directly from source systems |
 | **Hybrid Mart** | Combination of both |
 
+**Advantages of Data Mart:**
+
+1. **Faster to implement** than a full data warehouse, because it is designed for **one department/function** instead of the whole enterprise.
+2. **Choice of model based on cost and business need** — an organization can pick dependent / independent / hybrid depending on budget and use case.
+3. **Easy data access** for end users — the data is already focused, smaller, and pre-filtered for that department's queries.
+4. **Frequently accessed queries** run on a small, optimised dataset, which enables fast **business trend analysis** and dashboarding for that team.
+
+**Disadvantages of Data Mart:**
+
+1. **Stores only specific function data** — it does not hold the entire organization's data, so cross-departmental analytics are limited.
+2. Creating **too many independent marts** across an organization becomes **cumbersome to manage**, leads to data duplication, and can create inconsistent "versions of the truth".
+
 **Data Warehouse vs Data Mart:**
 
 | | Data Warehouse | Data Mart |
@@ -306,6 +485,10 @@ A **Data Lake** is a centralized repository that stores **raw data in its origin
 ---
 
 ## **Section 4: ETL and Data Pipelines**
+
+> PYQ: Explain ETL. (2022, 2.5 marks)  
+> PYQ: Write short note on ELT. (2023, 2.5 marks)  
+> PYQ: Discuss the role of ETL (Extract, Transform, Load) processes and data pipelines in building and maintaining Data Lakes. (2024, 7 marks)
 
 ### **4.1 What is ETL?**
 
@@ -472,6 +655,48 @@ Spark:     Read from disk → Process in RAM → Process in RAM → Write to dis
 
 ---
 
+### **5.4 Apache Cassandra — Detailed Note**
+
+> PYQ: Write short note on Cassandra. (2024, 7.5 marks)
+
+**Definition:**
+
+**Apache Cassandra** is a powerful, **open-source NoSQL database** designed to manage **large volumes of data spread across many servers**. It is a **distributed, highly scalable, high-performance** database that provides **high availability with no single point of failure**, making it ideal for mission-critical Big Data workloads.
+
+```
+        ┌───────────────────────────────────────────────┐
+        │             Cassandra Cluster (Ring)          │
+        │                                               │
+        │    Node 1 ────── Node 2 ────── Node 3         │
+        │      │              │              │          │
+        │      └──── Node 6 ──┴── Node 4 ────┘          │
+        │                  Node 5                       │
+        │                                               │
+        │  • No master node  • Peer-to-peer             │
+        │  • Auto data distribution  • Replication      │
+        └───────────────────────────────────────────────┘
+```
+
+**Six Key Aspects of Cassandra:**
+
+1. **Scalability:** Cassandra can handle **massive amounts of data** by spreading it across a cluster of machines. It supports **horizontal scaling** — adding more nodes increases capacity linearly without downtime.
+
+2. **High Availability:** Its **distributed, peer-to-peer architecture** means **if one server fails, the system keeps operating**. There is **no single point of failure** because every node is equal and data is replicated to multiple nodes.
+
+3. **Low Latency:** Cassandra is optimised for **fast read and write operations**, making it suitable for **real-time applications** such as messaging, IoT telemetry, and recommendation systems.
+
+4. **Data Distribution:** Cassandra **automatically distributes data** across the cluster using consistent hashing. There is **no single bottleneck node** — load is balanced across all members of the ring.
+
+5. **NoSQL Database:** It does not enforce a **strict schema** and can handle **various types of data** (structured and semi-structured), giving developers flexibility as requirements evolve.
+
+6. **Open Source:** Cassandra is **free and open source** (Apache 2.0), which makes it **cost-effective and widely accessible** for organizations of any size.
+
+**Summary line for exam:** *Cassandra is a highly scalable, high-performance distributed NoSQL database with no single point of failure, used to manage huge volumes of data across many servers.*
+
+**Used by:** Netflix, Facebook (originally developed there), Instagram, Apple, Uber.
+
+---
+
 ## **Section 6: Modern Data Ecosystem and Key Players**
 
 ### **6.1 Modern Data Ecosystem**
@@ -528,6 +753,8 @@ The **Modern Data Ecosystem** is the complete landscape of tools, technologies, 
 ---
 
 ## **Section 7: Types of Data**
+
+> PYQ: Discuss Types of Data in detail. (2022, part of 15 marks)
 
 ### **7.1 Classification by Structure**
 
@@ -619,6 +846,8 @@ Data in the Big Data world falls into three categories:
 ---
 
 ## **Section 8: File Formats in Big Data**
+
+> PYQ: Write short note on different types of file formats used in Big Data. (2023, 15 marks)
 
 ### **8.1 Why File Format Matters**
 
@@ -720,6 +949,8 @@ Row 3: ...                  City col:  Jaipur, Delhi
 ---
 
 ## **Section 9: Sources of Data Using Service Bindings**
+
+> PYQ: Write short note on Sources of data using service bindings. (2023, 2.5 marks)
 
 ### **9.1 What are Service Bindings?**
 
@@ -867,11 +1098,68 @@ Extract → Transform → Load
 ### **Service Bindings:**
 - DB connectors (Sqoop), Streams (Kafka), APIs (REST), Cloud (S3), IoT (MQTT), Web scraping.
 
+### **RDBMS Architecture — 10 components (Section 1.5):**
+
+```
+1. Secondary Storage (Disk/Tape) — Data, Metadata, Logs
+2. Application Compiler          — compiles Java/C app programs
+3. DBA + Command Processor       — DDL: create/drop tables, constraints
+4. Query Compiler                — compiles SQL queries
+5. Query Optimiser               — picks best execution plan
+6. RDBMS Runtime System          — executes queries / app programs
+7. Buffer Manager                — paging cache in RAM
+8. Transaction Manager           — Atomicity (all-or-nothing)
+9. Log                           — records of every transaction
+10. Recovery Manager             — undo partial txns after crash
+```
+
+### **MongoDB Short Note (Section 2.4):**
+- Open-source **document-oriented NoSQL DB**, released **Feb 2009** by MongoDB Inc, **SSPL** license.
+- Hierarchy: **Server → Database → Collection → Document → Fields**.
+- Stores documents in **BSON (Binary JSON)**; schema-less; allows nested documents.
+- Max document size **16 MB**.
+- Drivers: C, C++, C#, .Net, Go, Java, Node.js, Perl, PHP, Python, Motor, Ruby, Scala, Swift, Mongoid.
+- Used by Facebook, Nokia, eBay, Adobe, Google.
+
+### **Cassandra Short Note (Section 5.4):**
+- Open-source distributed NoSQL DB; **no single point of failure**.
+- 6 aspects: **Scalability, High Availability, Low Latency, Data Distribution, NoSQL (schema-flex), Open Source**.
+- *Highly scalable, high-performance distributed database for huge data across many servers.*
+
+### **Data Mart — Pros / Cons (Section 3.2):**
+- **Pros:** faster than DW, model choice by cost/business, easy access, frequent queries enable trend analysis.
+- **Cons:** stores only one function's data; too many marts become cumbersome.
+
 ---
 
 ## **Expected Exam Questions**
 
-> PYQs will be added after analysis — check back soon.
+### **15-Mark Questions:**
+
+1. Explain RDBMS features and architecture in detail. *(2023)*
+2. Compare and contrast Relational Database Management System (RDBMS) and NoSQL database in the context of Big Data storage and Management. Discuss the advantages and disadvantages of each approach. *(2024)*
+3. What is NoSQL? Explain different types of NoSQL databases with example. Differentiate SQL and NoSQL with example. *(2023)*
+4. Define Data Mart. Explain different types of data marts with example. Also discuss advantages and disadvantages of data marts. *(2023)*
+5. Write short note on different types of file formats used in Big Data. *(2023)*
+6. Discuss Types of Data in detail. *(2022)*
+
+### **Mixed (8 + 7 marks):**
+
+1. Explain the concept of Data lakes and how they are different from data marts. *(2024, 8 marks)*
+2. Discuss the role of ETL (Extract, Transform, Load) processes and data pipelines in building and maintaining Data Lakes. *(2024, 7 marks)*
+
+### **Short Answer Questions (2.5 marks):**
+
+1. Explain Data Mart. *(2022)*
+2. Explain ETL. *(2022)*
+3. Write short note on ELT. *(2023)*
+4. Write short note on MongoDB. *(2023)*
+5. Write short note on Sources of data using service bindings. *(2023)*
+6. Compare and contrast RDBMS and NoSQL. *(2024)*
+
+### **Short Note (≈ 7.5 marks):**
+
+1. Write short note on Cassandra. *(2024)*
 
 ---
 

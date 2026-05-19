@@ -14,13 +14,37 @@ pdfUrl: ""
 
 ## 🎯 PYQ Analysis for Unit 1
 
-> PYQs will be added after analysis — check back soon.
+### **High Priority Topics** (15 marks questions)
+
+1. **6 V's of Big Data (Characteristics)** — (2024: 15 marks, 2023: 15 marks, 2022: 15 marks)
+2. **HDFS — NameNode, DataNode, Blocks, Operations & Commands** — (2023: 15 marks, 2022: 15 marks) → Section 7 + 7.8
+3. **Big Data Definition + Characteristics + Applications + Challenges** — (2024: 15 marks, 2023: 15 marks, 2022: 15 marks)
+4. **Data Science Process (steps + real-world example)** — (2024: 15 marks) → Section 5 + 5.4
+5. **Big Data Platform — Main Features (5 characteristics)** — (2022: 15 marks) → Section 9
+6. **Foundation for Big Data System** — (2023: 15 marks) → Section 6
+7. **Big Data Analytics Techniques (A/B testing, Data Mining, ML, NLP, Statistics, Data Fusion)** — (2022: 15 marks) → Section 8
+8. **Types of Data — Measurement Scales (Nominal / Ordinal / Interval / Ratio)** — (2022: 15 marks) → Section 10
+9. **Challenges in Big Data** — (2022: 15 marks) → Section 2.2
+
+### **Medium Priority Topics** (Short answers)
+
+1. **Six V in Big Data** — 2024 (2.5), 2022 (2.5)
+2. **Big Data definition** — 2022 (2.5)
+3. **YARN — Components & Features** — 2022 (2.5) → Section 6.4
+4. **Data Sciences** — 2023 (2.5)
+5. **DFS (Distributed File System)** — 2023 (2.5)
+6. **5 challenges of Big Data** — 2024 (2.5)
+7. **Hadoop (short note — HDFS + MapReduce + YARN)** — 2024 (7.5 marks) → Section 11
 
 ---
 
 ## **Section 1: Big Data — Why and Where**
 
 ### **1.1 What is Big Data?**
+
+> PYQ: Explain Big Data. (2022, 2.5 marks)  
+> PYQ: What is Big Data? Explain various characteristics, challenges and applications of Big Data. (2023, 15 marks)  
+> PYQ: Define different techniques in Big Data analytics. (2022, 15 marks)
 
 **Definition:**
 
@@ -109,6 +133,11 @@ Data has always existed, but several forces have **exploded the volume** beyond 
 
 ## **Section 2: Applications and Challenges**
 
+> PYQ: Discuss the following in detail: (i) Challenges in big data (ii) Types of Data. (2022, 15 marks)  
+> PYQ: Enlist 5 challenges associated with managing and analyzing large volumes of data. (2024, 2.5 marks)  
+> PYQ: Describe any five real life applications of Big Data. (2022, 15 marks)  
+> PYQ: Write short note on real life applications of Big Data. (2023, 15 marks)
+
 ### **2.1 Applications of Big Data**
 
 **1. Healthcare:**
@@ -196,6 +225,11 @@ Despite its potential, Big Data comes with significant challenges:
 ---
 
 ## **Section 3: Characteristics of Big Data — The 6 V's**
+
+> PYQ: Six V in big data. (2022, 2.5 marks)  
+> PYQ: Briefly elaborate the six V of big data. (2024, 2.5 marks)  
+> PYQ: Explain six V's of Big Data in detail. (2023, 15 marks)  
+> PYQ: Explain the characteristics of Big Data and discuss how they contribute to the challenges in managing large volumes of data. (2024, 15 marks)
 
 ### **3.1 What are the V's of Big Data?**
 
@@ -404,6 +438,10 @@ Before:          After:
 
 ## **Section 5: Data Science — Getting Value out of Big Data**
 
+> PYQ: Write short note on Data Sciences. (2023, 2.5 marks)  
+> PYQ: Describe the steps involved in the Data Science process. How does each step contribute to extracting value from Big Data? (2024, 8 marks)  
+> PYQ: Illustrate with a real-world scenario for steps involving Data Science process. (2024, 7 marks)
+
 ### **5.1 What is Data Science?**
 
 **Definition:**
@@ -517,7 +555,32 @@ The data science process is a structured workflow for turning raw data into valu
 
 ---
 
+### **5.4 Real-World Scenario — Data Science Process Across Industries**
+
+> PYQ: Illustrate with a real-world scenario for steps involving Data Science process. (2024, 7 marks)
+
+The same 7-step process applies across industries — only the **domain context** changes. Below is a parallel walk-through for **Healthcare**, **Finance**, and **Retail**.
+
+| Step | Healthcare | Finance | Retail |
+|------|-----------|---------|--------|
+| **1. Problem Definition** | Predict patient readmissions within 30 days | Detect fraudulent transactions / credit defaults | Increase sales by understanding customer patterns |
+| **2. Data Collection** | Electronic Health Records (EHR), lab results, medical images (X-Ray, MRI) | Bank transaction logs, credit history, account activity | Customer purchase history, clickstream, loyalty card data |
+| **3. Data Cleaning** | Clean patient records — fill missing vitals, standardize ICD codes | Standardize transaction formats across branches; remove duplicates | Deduplicate customer profiles, merge across channels |
+| **4. EDA** | Identify disease outbreak patterns, age-disease correlations | Anomaly detection in spending behavior, peak fraud windows | Discover customer preferences, basket affinities |
+| **5. Modeling** | Classifier to flag high-risk readmission patients | ML model for real-time fraud detection (Random Forest, XGBoost) | Churn prediction & recommendation engine |
+| **6. Evaluation** | Validate diagnosis model accuracy (AUC, sensitivity) on test patients | Backtest fraud-detection precision/recall on past cases | Cross-validate churn predictions vs actual customer drop |
+| **7. Deployment** | Embed model into hospital admission dashboard for doctors | Plug fraud-scoring API into live transaction stream | Deploy churn model into CRM; trigger retention offers |
+
+**Key Insight:** The process is **domain-agnostic** — the value comes from translating domain expertise into the right problem definition and feature engineering at Steps 1–3.
+
+---
+
 ## **Section 6: Foundations for Big Data Systems and Programming**
+
+> PYQ: Write short note on foundation for Big Data system. (2023, 15 marks)  
+> PYQ: What is Big Data Platform? Describe the main features of a big data platform in detail. (2022, 15 marks)  
+> PYQ: Explain YARN. (2022, 2.5 marks)  
+> PYQ: Write short note on Hadoop. (2024, 7.5 marks)
 
 ### **6.1 What Makes a Big Data System?**
 
@@ -630,7 +693,54 @@ Final Output:
 
 ---
 
+### **6.4 YARN — Yet Another Resource Negotiator**
+
+> PYQ: Explain YARN. (2022, 2.5 marks)
+
+**Definition:**
+
+**YARN (Yet Another Resource Negotiator)** is a **cluster resource manager** in Hadoop. It was created by **separating the processing engine from the resource-management function** of classic MapReduce, and was introduced in **Hadoop 2.0** to remove the **Job Tracker bottleneck** of Hadoop 1.x.
+
+In short: YARN lets multiple data-processing engines (MapReduce, Spark, Flink, Tez) share the same Hadoop cluster.
+
+**YARN Architecture — 4 Components:**
+
+```
+   ┌──────────┐     submits job      ┌────────────────────┐
+   │  Client  │ ───────────────────► │  Resource Manager  │
+   └──────────┘                      │  (Cluster Master)  │
+                                     └─────────┬──────────┘
+                              allocates        │
+                              containers       ▼
+                              ┌────────────────────────────┐
+                              │   Node Manager (per node)  │
+                              │   ┌──────────────────────┐ │
+                              │   │ MR App Master + Tasks│ │
+                              │   └──────────────────────┘ │
+                              └────────────────────────────┘
+```
+
+| Component | Role |
+|-----------|------|
+| **Client** | Submits MapReduce (or Spark/other) jobs to the cluster. |
+| **Resource Manager (RM)** | Central master — manages and allocates resources (CPU, memory) across the entire cluster. |
+| **Node Manager (NM)** | Runs on each worker machine — launches, monitors, and reports the status of containers. |
+| **MapReduce Application Master (AM)** | One per job — negotiates resources with RM and supervises the tasks running the MapReduce job. |
+
+**Features of YARN:**
+
+- **Resource Management** — central allocation of CPU and memory.
+- **Scalability** — supports thousands of nodes; removes the old Job Tracker bottleneck.
+- **Cluster Utilization** — multiple frameworks (MR, Spark, Tez) share resources.
+- **Flexibility** — not tied to MapReduce only; any distributed app can plug in.
+
+---
+
 ## **Section 7: Distributed File Systems**
+
+> PYQ: Write short note on DFS (Distributed File System). (2023, 2.5 marks)  
+> PYQ: Define HDFS. Describe NameNode, DataNode and Block. Explain HDFS operations in detail. (2022, 15 marks)  
+> PYQ: What is HDFS? Explain its components. (2023, 15 marks)
 
 ### **7.1 What is a Distributed File System?**
 
@@ -768,6 +878,348 @@ A **Distributed File System (DFS)** is a file system that stores data across **m
 
 ---
 
+### **7.8 HDFS Operations & Commands**
+
+> PYQ: Define HDFS. Describe NameNode, DataNode and Block. Explain HDFS operations in detail. (2022, 15 marks)
+
+HDFS exposes a **shell-like command-line interface** (`hadoop fs` / `hdfs dfs`) for users to interact with the file system. The four main operations every student must know are: **Starting HDFS, Listing files, Inserting data, Retrieving data, and Shutting down**.
+
+#### **1. Starting HDFS**
+
+Before using HDFS, the file system must be formatted (only the first time) and the daemons (NameNode + DataNodes) must be started.
+
+```bash
+# First-time only — format the NameNode
+$ hadoop namenode -format
+
+# Start all HDFS daemons (NameNode, DataNodes, Secondary NN)
+$ start-dfs.sh
+```
+
+#### **2. Listing Files in HDFS**
+
+Once HDFS is running, use the `-ls` command to list the contents of a directory.
+
+```bash
+$ $HADOOP_HOME/bin/hadoop fs -ls <args>
+```
+
+Example:
+```bash
+$ hadoop fs -ls /user/input
+```
+
+#### **3. Inserting Data into HDFS**
+
+Loading a local file into HDFS is a **3-step process**:
+
+```bash
+# Step 1 — Create an input directory in HDFS
+$ hadoop fs -mkdir /user/input
+
+# Step 2 — Transfer the local file to HDFS
+$ hadoop fs -put /home/file.txt /user/input
+
+# Step 3 — Verify that the file is uploaded
+$ hadoop fs -ls /user/input
+```
+
+#### **4. Retrieving Data from HDFS**
+
+Data can be **viewed in place** or **copied back** to the local file system.
+
+```bash
+# View file contents directly from HDFS
+$ hadoop fs -cat /user/output/outfile
+
+# Copy a file/directory from HDFS to local file system
+$ hadoop fs -get /user/output/ /home/hadoop_tp/
+```
+
+#### **5. Shutting Down HDFS**
+
+```bash
+$ stop-dfs.sh
+```
+
+This stops all HDFS daemons cleanly.
+
+**Operation Summary:**
+
+| Operation | Key Command |
+|-----------|-------------|
+| Start HDFS | `start-dfs.sh` |
+| List files | `hadoop fs -ls` |
+| Make directory | `hadoop fs -mkdir` |
+| Upload file | `hadoop fs -put` |
+| View file | `hadoop fs -cat` |
+| Download file | `hadoop fs -get` |
+| Stop HDFS | `stop-dfs.sh` |
+
+---
+
+## **Section 8: Big Data Analytics Techniques**
+
+> PYQ: Define the different techniques in Big Data analytics. (2022, 15 marks)
+
+Big Data analytics is **not a single method** — it is a toolbox of techniques drawn from statistics, machine learning, AI, and database research. The six most important techniques are described below.
+
+### **8.1 Six Core Techniques**
+
+#### **1. A/B Testing**
+
+- **Definition:** A controlled experiment comparing a **control group** (existing version) against one or more **test groups** (new variants) to determine which one improves a defined objective (e.g., click-through rate, conversions).
+- **Example:** A retail website shows version A of a product page to 50% of visitors and version B to the other 50%. The variant with the higher purchase rate wins.
+
+#### **2. Data Fusion and Data Integration**
+
+- **Definition:** The process of **combining and analyzing data from multiple sources** so that insights are richer than any single source could deliver.
+- **Example:** Combining smartphone GPS data, weather feeds, and social-media check-ins to map real-time traffic congestion.
+
+#### **3. Data Mining**
+
+- **Definition:** Extracting **hidden patterns and useful information** from large datasets using a combination of **statistics, machine learning, and database management**.
+- **Example:** **Customer segmentation** — clustering supermarket shoppers into groups (budget, premium, bulk-buyers) based on purchase histories.
+
+#### **4. Machine Learning**
+
+- **Definition:** A family of algorithms that **make assumptions / learn patterns from data** and use those patterns to make predictions on new, unseen data. ML provides predictions that would be **impossible (or too slow) for human analysts**.
+- **Example:** Netflix recommending movies, Gmail filtering spam, banks scoring credit-card fraud risk.
+
+#### **5. Natural Language Processing (NLP)**
+
+- **Definition:** A **sub-speciality of computer science, AI, and linguistics** that analyzes, understands, and generates **human language** (text and speech).
+- **Example:** Sentiment analysis of tweets, chatbots, Google Translate, voice assistants (Alexa, Siri).
+
+#### **6. Statistics**
+
+- **Definition:** The classical science of **collecting, organizing, analyzing, interpreting, and presenting data** from surveys and experiments.
+- **Example:** Computing the mean customer lifetime value, hypothesis testing for marketing campaigns, regression analysis.
+
+### **8.2 Other Techniques (briefly)**
+
+- **Spatial Analysis** — analyzing geographic / location-based data (GIS, maps).
+- **Predictive Modelling** — building statistical / ML models to forecast future outcomes.
+- **Association Rule Learning** — finding "if-then" relationships ("people who buy bread also buy butter").
+- **Network Analysis** — studying nodes and edges in graphs (social networks, fraud rings).
+
+### **8.3 Summary Table**
+
+| # | Technique | Core Idea |
+|---|-----------|-----------|
+| 1 | A/B Testing | Control vs Test comparison |
+| 2 | Data Fusion / Integration | Combine multiple sources |
+| 3 | Data Mining | Extract patterns from large data |
+| 4 | Machine Learning | Algorithms that learn from data |
+| 5 | NLP | Understand human language |
+| 6 | Statistics | Collect & interpret data |
+
+---
+
+## **Section 9: Big Data Platform — Main Features**
+
+> PYQ: What is Big Data Platform? Describe the main features of a big data platform in detail. (2022, 15 marks)
+
+### **9.1 What is a Big Data Platform?**
+
+A **Big Data Platform** is an **integrated computing solution** that combines **software, tools, and hardware** to manage the full Big Data lifecycle — ingestion, storage, processing, analysis, and visualization — at petabyte scale.
+
+Examples: Cloudera CDP, Hortonworks HDP, AWS EMR, Google BigQuery, Azure HDInsight.
+
+### **9.2 Five Main Features (Characteristics)**
+
+```
+   ┌─────────────────────────────────────────┐
+   │       Big Data Platform — 5 Features    │
+   ├─────────────────────────────────────────┤
+   │  1. Comprehensive                       │
+   │  2. Integrated                          │
+   │  3. Scalability                         │
+   │  4. Extensible                          │
+   │  5. Minimum Maintenance                 │
+   └─────────────────────────────────────────┘
+```
+
+#### **1. Comprehensive**
+
+- Handles **all the Big Data challenges** — Volume, Variety, and Velocity — within a single unified stack.
+- Supports structured, semi-structured, and unstructured data, plus batch and stream pipelines.
+
+#### **2. Integrated**
+
+- Works **alongside existing information architecture** — traditional **databases, data warehouses, and BI tools** (Teradata, Tableau, Power BI, Informatica).
+- Avoids data silos by exposing Big Data results back to enterprise reporting layers.
+
+#### **3. Scalability**
+
+- Designed to **scale from gigabytes to petabytes without redesign** — this is the role Hadoop plays.
+- Storage must be **cost-efficient** (commodity disks, object storage) so scaling does not break budgets.
+
+#### **4. Extensible**
+
+- Easy to **accommodate newer technologies** as the company expands — new processing engines (Spark, Flink), new sources, new ML libraries.
+- Naturally **integrates IoT and sensor data** into the same platform.
+
+#### **5. Minimum Maintenance**
+
+- Fault-tolerant design — failure of an individual node does not stop the platform.
+- Individual hardware can be **upgraded or replaced without downtime**.
+- Self-healing replication and automatic re-balancing.
+
+### **9.3 Summary Table**
+
+| Feature | Why it matters |
+|---------|----------------|
+| Comprehensive | Solves V-V-V challenges in one stack |
+| Integrated | Plays well with existing DW / BI |
+| Scalability | Petabyte growth without redesign |
+| Extensible | Accepts new tech (IoT, ML, streaming) |
+| Minimum Maintenance | Fault tolerant, hot-swappable hardware |
+
+---
+
+## **Section 10: Types of Data (Measurement Scales)**
+
+> PYQ: Discuss the following in detail: (i) Challenges in big data (ii) Types of Data. (2022, 15 marks)
+
+### **10.1 How Data is Classified**
+
+Data is classified into **measurement scales** based on **three characteristics**:
+
+| Characteristic | Question it answers |
+|----------------|---------------------|
+| **Order** | Does the order of observations matter? |
+| **Distance** | Are the distances (intervals) between observations meaningful? |
+| **True Zero** | Is there a real, absolute zero point? |
+
+Based on these three properties, data falls into **four measurement scales**: **Nominal, Ordinal, Interval, and Ratio**.
+
+```
+   Nominal  →  Ordinal  →  Interval  →  Ratio
+   (labels)   (rank)      (+ equal     (+ true zero
+                            spacing)      → ratios)
+```
+
+### **10.2 The Four Measurement Scales**
+
+#### **1. Nominal Scale**
+
+- **Definition:** Categories or labels with **no inherent order** between them.
+- **Examples:** Gender (Male/Female/Other), ethnicity, product type, blood group.
+- **Properties:**
+  - **Order:** Doesn't matter.
+  - **Distance:** Not held (cannot subtract one category from another).
+  - **True Zero:** None.
+- **Allowed operations:** Counting, mode, chi-square tests.
+
+#### **2. Ordinal Scale**
+
+- **Definition:** Categories with a **natural order or ranking**, but the **intervals between ranks are unequal / unknown**.
+- **Examples:** Customer ratings (Poor / Fair / Good / Excellent), survey responses (Strongly Disagree → Strongly Agree), military ranks, education level.
+- **Properties:**
+  - **Order:** Matters.
+  - **Distance:** Not held (the gap between "Good" and "Excellent" is not equal to "Poor" to "Fair").
+  - **True Zero:** None.
+- **Allowed operations:** Median, percentiles, rank correlation.
+
+#### **3. Interval Scale**
+
+- **Definition:** Numerical data with **consistent (equal) intervals** between values, but **no true zero point**.
+- **Examples:** Temperature in **Celsius** or **Fahrenheit**, calendar years, IQ scores.
+- **Properties:**
+  - **Order:** Matters.
+  - **Distance:** Held — the gap between 20°C and 30°C equals the gap between 30°C and 40°C.
+  - **True Zero:** None — 0°C does **not** mean "no temperature" (it's rescalable; 0°C ≠ 0°F).
+- **Allowed operations:** Addition, subtraction, mean, standard deviation. **Ratios are NOT meaningful** (40°C is not "twice as hot" as 20°C).
+
+#### **4. Ratio Scale**
+
+- **Definition:** Numerical data with **equal intervals AND a true zero point**, making **ratios meaningful**.
+- **Examples:** Weight, height, age, income, distance, time elapsed, temperature in **Kelvin**.
+- **Properties:**
+  - **Order:** Matters.
+  - **Distance:** Held.
+  - **True Zero:** Present — 0 kg means **no weight**; ₹0 means no income.
+- **Allowed operations:** All arithmetic — including ratios ("60 kg is twice 30 kg").
+
+### **10.3 Summary Comparison Table**
+
+| Scale | Order | Distance | True Zero | Example | Key Stat |
+|-------|:-----:|:--------:|:---------:|---------|----------|
+| **Nominal** | ✘ | ✘ | ✘ | Gender, blood group | Mode, count |
+| **Ordinal** | ✔ | ✘ | ✘ | Ratings, ranks | Median |
+| **Interval** | ✔ | ✔ | ✘ | Celsius, IQ | Mean, SD |
+| **Ratio** | ✔ | ✔ | ✔ | Weight, income | All operations |
+
+**Rule of thumb:** Each scale **includes** the properties of the previous one — Ratio is the most powerful, Nominal the most limited.
+
+---
+
+## **Section 11: Hadoop — Detailed Note**
+
+> PYQ: Write short note on Hadoop. (2024, 7.5 marks)
+
+### **11.1 Definition**
+
+**Hadoop** is an **open-source Java framework** developed by the Apache Software Foundation for **storing massive amounts of data** and **processing it in parallel** across clusters of commodity hardware. It is the de-facto standard for Big Data infrastructure.
+
+Designed to be:
+- **Distributed** — runs on hundreds/thousands of nodes.
+- **Fault-tolerant** — survives hardware failures.
+- **Scalable** — add more nodes to handle more data.
+- **Cost-effective** — uses cheap commodity servers.
+
+### **11.2 Three Core Components**
+
+```
+        ┌──────────────────────────────────┐
+        │             HADOOP               │
+        ├───────────┬──────────┬───────────┤
+        │   HDFS    │ MapReduce│    YARN   │
+        │ (Storage) │(Processing)│(Resource)│
+        └───────────┴──────────┴───────────┘
+```
+
+#### **1. HDFS (Hadoop Distributed File System) — Storage**
+
+- **Distributed Storage** — splits files into blocks and stores them across many DataNodes.
+- **Scalability** — add DataNodes to grow capacity linearly.
+- **Data Replication** — each block is replicated (default = **3 copies**) for fault tolerance.
+- **Data Compression** — supports codecs (Snappy, Gzip, LZO) to reduce storage and I/O.
+
+#### **2. MapReduce — Processing**
+
+A parallel programming model that processes data in three phases:
+
+```
+  Map  →  Shuffle / Sort  →  Reduce
+  ───────────────────────────────────
+  Map:     Split data and emit (key, value) pairs
+  Shuffle: Group all values by key across nodes
+  Reduce:  Aggregate / combine values for final output
+```
+
+#### **3. YARN (Yet Another Resource Negotiator) — Resource Management**
+
+- **Resource Management** — central CPU and memory allocation across the cluster.
+- **Scalability** — supports thousands of nodes (replaces Hadoop-1 Job Tracker bottleneck).
+- **Cluster Utilization** — multiple engines (MR, Spark, Tez, Flink) share the same cluster.
+- **Flexibility** — supports varied workloads, not just MapReduce.
+
+### **11.3 Hadoop in One Picture**
+
+```
+  ┌──────────────────────────────────────────────────┐
+  │                   HADOOP CLUSTER                 │
+  │                                                  │
+  │   Storage  ─►  HDFS  (blocks + 3x replication)   │
+  │   Compute  ─►  MapReduce / Spark / Tez           │
+  │   Manage   ─►  YARN (RM + NM + AM)               │
+  └──────────────────────────────────────────────────┘
+```
+
+---
+
 ## **Quick Revision Points**
 
 ### **Big Data — Why & Where:**
@@ -804,11 +1256,77 @@ A **Distributed File System (DFS)** is a file system that stores data across **m
 Map → (key, value) pairs → Shuffle & Sort → Reduce → Final output
 ```
 
+### **YARN (4 components):**
+- Client → Resource Manager → Node Manager → MR Application Master.
+- Features: Resource Management, Scalability, Cluster Utilization, Flexibility.
+
+### **HDFS Operations (commands):**
+- Start: `hadoop namenode -format` → `start-dfs.sh`
+- List: `hadoop fs -ls`
+- Insert: `-mkdir` → `-put /home/file.txt /user/input` → `-ls`
+- Retrieve: `-cat /user/output/outfile` / `-get /user/output/ /home/hadoop_tp/`
+- Stop: `stop-dfs.sh`
+
+### **Big Data Analytics Techniques (6):**
+A/B Testing · Data Fusion / Integration · Data Mining · Machine Learning · NLP · Statistics.
+*Other:* Spatial analysis, Predictive modelling, Association rule learning, Network analysis.
+
+### **Big Data Platform — 5 Features:**
+1. Comprehensive · 2. Integrated · 3. Scalability · 4. Extensible · 5. Minimum Maintenance.
+
+### **Types of Data — 4 Measurement Scales:**
+
+| Scale | Order | Distance | True Zero | Example |
+|-------|:-----:|:--------:|:---------:|---------|
+| Nominal | ✘ | ✘ | ✘ | Gender |
+| Ordinal | ✔ | ✘ | ✘ | Ratings |
+| Interval | ✔ | ✔ | ✘ | Celsius |
+| Ratio | ✔ | ✔ | ✔ | Weight |
+
+### **Hadoop (3 components):**
+- **HDFS** — Distributed Storage + Scalability + 3-copy Replication + Compression.
+- **MapReduce** — Map → Shuffle/Sort → Reduce.
+- **YARN** — Resource Management + Scalability + Cluster Utilization + Flexibility.
+
+### **Data Science Process — Domain Examples:**
+Healthcare (readmission) · Finance (fraud) · Retail (churn) — same 7 steps, different domain context.
+
 ---
 
 ## **Expected Exam Questions**
 
-> PYQs will be added after analysis — check back soon.
+### **15-Mark Questions:**
+
+1. What is Big Data? Explain various characteristics, challenges and applications of Big Data. *(2023)*
+2. Explain the characteristics of Big Data and discuss how they contribute to the challenges in managing large volumes of data. *(2024)*
+3. Explain six V's of Big Data in detail. *(2023)*
+4. Define HDFS. Describe NameNode, DataNode and Block. **Explain HDFS operations (start, list, insert, retrieve, stop) with commands in detail.** *(2022)*
+5. What is HDFS? Explain its components. *(2023)*
+6. **What is Big Data Platform? Describe the main features (Comprehensive, Integrated, Scalability, Extensible, Minimum Maintenance) of a big data platform in detail.** *(2022)*
+7. Write short note on foundation for Big Data system. *(2023)*
+8. **Define the different techniques in Big Data analytics (A/B Testing, Data Fusion, Data Mining, ML, NLP, Statistics).** *(2022)*
+9. **Discuss the following in detail: (i) Challenges in big data (ii) Types of Data (Nominal, Ordinal, Interval, Ratio measurement scales).** *(2022)*
+10. Describe any five real life applications of Big Data. *(2022)*
+11. Write short note on real life applications of Big Data. *(2023)*
+
+### **Mixed (8 + 7 marks):**
+
+1. Describe the steps involved in the Data Science process. How does each step contribute to extracting value from Big Data? *(2024, 8 marks)*
+2. **Illustrate with a real-world scenario (Healthcare / Finance / Retail) for steps involving Data Science process.** *(2024, 7 marks)*
+
+### **Short Answer Questions (2.5 marks):**
+
+1. Explain Big Data. *(2022)*
+2. **Explain YARN — its 4 components (Client, Resource Manager, Node Manager, MR Application Master) and features.** *(2022)*
+3. Six V in Big Data. *(2022)*
+4. Briefly elaborate the six V of Big Data. *(2024)*
+5. Write short note on Data Sciences. *(2023)*
+6. Write short note on DFS. *(2023)*
+7. Enlist 5 challenges associated with managing and analyzing large volumes of data. *(2024)*
+
+### **Short Note (≈ 7.5 marks):**
+
+1. **Write short note on Hadoop — covering HDFS (Storage + Replication + Compression), MapReduce (Map → Shuffle → Reduce), and YARN (Resource Manager).** *(2024)*
 
 ---
 

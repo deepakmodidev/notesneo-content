@@ -14,7 +14,19 @@ pdfUrl: ""
 
 ## 🎯 PYQ Analysis for Unit 3
 
-> PYQs will be added after analysis — check back soon.
+### **High Priority Topics** (15 marks questions)
+
+1. **Data Models — Types (Relational, Key-Value, Document, Column, Graph)** — (2023: 15 marks) — *Section 8*
+2. **Scalability — concept, vertical vs horizontal, challenges, traditional DBMS vs Big Data Mgmt (unified)** — (2024: 15 marks) — *Sections 5.1 + 5.3*
+3. **Data Quality — importance (5 reasons), challenges at scale (3 V's), solutions (6 approaches)** — (2024: 15 marks) — *Sections 2.1–2.7*
+4. **Big Data Management Techniques (8 techniques — governance, quality, mining, security, analytics, ML, predictive, centralized mgmt)** — (2023: 15 marks) — *Section 6.4*
+5. **Traditional Data vs Big Data — Comparison** — (2022: 15 marks) — *Section 6.2*
+6. **Real Life Applications of Big Data** — (2023: 15 marks, 2022: 15 marks) — *Section 7*
+
+### **Medium Priority Topics** (Short answers)
+
+1. **Data Ingestion** — 2023 (2.5 marks)
+2. **Types of Data Models and their applications** — 2024 (2.5 marks)
 
 ---
 
@@ -103,6 +115,8 @@ pdfUrl: ""
 
 ## **Section 2: Data Quality**
 
+> PYQ: Discuss the importance of data quality in Big Data Management. What are the key challenges in ensuring data quality at scale? How can organizations address these challenges effectively? (2024, 15 marks)
+
 ### **2.1 What is Data Quality?**
 
 **Definition:**
@@ -155,6 +169,105 @@ Steps to ensure data quality:
 
 ---
 
+### **2.5 Importance of Data Quality in Big Data Management**
+
+> PYQ: Discuss the importance of data quality in Big Data Management. (2024, 15 marks)
+
+In Big Data environments, **the value of analytics is directly proportional to the quality of the data**. The following five reasons explain why quality is a non-negotiable foundation:
+
+#### **1. Informed Decision-Making**
+- High-quality data provides a **reliable basis** for business decisions.
+- Executives, analysts, and managers depend on data to forecast trends and shape strategy.
+- Poor data → wrong conclusions → costly strategic mistakes.
+
+#### **2. Enhanced Operational Efficiency**
+- Clean, accurate data **reduces errors, redundancies, and processing inefficiencies**.
+- Less time wasted reconciling conflicting records → faster pipelines, lower compute cost.
+
+#### **3. Regulatory Compliance**
+- Industries like **healthcare, finance, and government** must follow strict regulations (HIPAA, GDPR, PCI-DSS, SOX).
+- Quality data is required for **accurate reporting and auditing**; poor data → fines and legal risk.
+
+#### **4. Improved Customer Experience**
+- Accurate, complete customer data enables **personalised products, services, and communication**.
+- Bad data leads to wrong recommendations, missed offers, and damaged customer trust.
+
+#### **5. Optimized Data Analytics**
+- Big Data analytics, ML models, and dashboards **depend entirely on data quality** for valid insights.
+- Poor-quality input **undermines the value** of even the most sophisticated analytics platforms.
+
+```
+                ┌────────────────┐
+   Raw Data  →  │  Quality Check │ → Reliable Insights → Better Decisions
+                └────────────────┘
+   (GIGO — without quality, output is unusable)
+```
+
+---
+
+### **2.6 Key Challenges in Ensuring Data Quality at Scale**
+
+Maintaining quality across petabyte-scale, fast-moving, heterogeneous data is far harder than on a traditional database. The challenges directly map to the **3 V's of Big Data**:
+
+#### **1. Data Volume**
+- With **petabytes streaming in daily**, manual monitoring becomes impractical.
+- Even automated tools struggle to **profile, validate, and clean** at this scale without huge compute cost.
+
+#### **2. Data Variety**
+- Big Data combines **structured (RDBMS), semi-structured (JSON/XML), and unstructured (text, images, video)** sources.
+- A **single uniform validation rule cannot cover all formats**, making consistency hard to enforce.
+
+#### **3. Data Velocity**
+- High-speed streaming sources (IoT sensors, clickstreams, social feeds) generate data **faster than it can be cleaned**.
+- Rapid updates create **inconsistency** between source systems and downstream stores.
+
+| Challenge | Root Cause | Typical Symptom |
+|-----------|-----------|-----------------|
+| Volume | Petabyte-scale ingestion | Missed bad records, slow profiling |
+| Variety | Mixed structured + unstructured | Schema mismatches, conflicting values |
+| Velocity | Real-time streams | Stale joins, duplicate / out-of-order events |
+
+---
+
+### **2.7 How Organizations Address Quality Challenges Effectively**
+
+A robust quality strategy combines **policy, tooling, and process**. The following six approaches are widely adopted:
+
+#### **1. Implement Data Governance Frameworks**
+- Defines **how data is collected, managed, stored, and processed** across the organization.
+- Assigns **data owners, stewards, and policies** so accountability is clear.
+
+#### **2. Use Data Quality Tools**
+- Specialized platforms automate profiling, cleansing, and validation.
+- Examples: **Talend Data Quality, Informatica, Apache Nifi, Apache Griffin, Great Expectations**.
+
+#### **3. Data Profiling and Monitoring**
+- **Profiling** = analysing data to find anomalies, distributions, and missing values.
+- **Continuous monitoring** detects quality drift early, before it pollutes downstream analytics.
+
+#### **4. Data Integration and Standardization**
+- Standardize **formats, units, codes, and structures** across heterogeneous systems.
+- E.g., enforce ISO date format `YYYY-MM-DD` and uniform country codes.
+
+#### **5. Data Cleansing and Enrichment**
+- **Remove duplicates**, handle missing values, fix inconsistencies.
+- **Enrich** records with reference data (e.g., add geo-coordinates from a postal code).
+
+#### **6. Master Data Management (MDM)**
+- Maintains a **single, consistent, authoritative view** of key business entities — customers, products, suppliers.
+- Eliminates conflicting versions across silos (e.g., "Bombay" vs "Mumbai" for the same customer).
+
+```
+       Governance ──┐
+       Tools ───────┤
+       Profiling ───┼──►  CLEAN, TRUSTED DATA  ──►  Analytics
+       Standardize ─┤
+       Cleansing ───┤
+       MDM ─────────┘
+```
+
+---
+
 ## **Section 3: Data Operations**
 
 ### **3.1 What are Data Operations?**
@@ -198,6 +311,8 @@ Steps to ensure data quality:
 ---
 
 ## **Section 4: Data Ingestion**
+
+> PYQ: Write short note on Data Ingestion. (2023, 2.5 marks)
 
 ### **4.1 What is Data Ingestion?**
 
@@ -262,6 +377,8 @@ Source → Kafka → Stream Processor → Storage / Dashboard
 
 ## **Section 5: Scalability and Security**
 
+> PYQ: Explain the concept of scalability in the context of Big Data storage and management systems. Discuss the scalability challenges associated with traditional DBMS and how they differ from those of Big Data Management System. (2024, 15 marks)
+
 ### **5.1 Scalability in Big Data**
 
 (Refer to Unit 1, Section 4 for full detail on vertical vs horizontal scaling.)
@@ -319,7 +436,108 @@ Big Data systems deal with **sensitive personal, financial, and health data**, m
 
 ---
 
+### **5.3 Scalability — Traditional DBMS vs Big Data Management Systems (Unified Comparison)**
+
+> PYQ: Explain the concept of scalability in the context of Big Data storage and management systems. Discuss the scalability challenges associated with traditional DBMS and how they differ from those of Big Data Management System. (2024, 15 marks)
+
+**Scalability** is the ability of a system to **handle increasing volumes of data, users, and workload** without degradation in performance. In Big Data, scalability is the **most critical design property** because data grows exponentially.
+
+#### **Two Types of Scalability**
+
+| Type | Approach | Analogy |
+|------|----------|---------|
+| **Vertical (Scale Up)** | Add more **CPU, RAM, or storage** to a single server | Upgrade one truck to a bigger truck |
+| **Horizontal (Scale Out)** | Add **more servers / nodes** to the network | Add more trucks to the fleet |
+
+```
+   Vertical:     [ Small Server ]  →  [   BIGGER  SERVER   ]
+   Horizontal:   [ Node ]          →  [ Node ][ Node ][ Node ][ Node ]
+```
+
+---
+
+#### **Scalability Challenges in Traditional DBMS**
+
+Traditional relational DBMS (MySQL, Oracle, PostgreSQL) were designed for the **single-machine era**. At Big Data scale they hit serious limits:
+
+**1. Limited Horizontal Scalability**
+- Optimized primarily for **vertical scaling** — you upgrade one machine.
+- Scaling out across nodes is possible but **complex and cost-prohibitive** at petabyte scale.
+
+**2. Data Sharding Complexity**
+- When data must span multiple servers, splitting it requires **manual sharding strategies**.
+- Choosing the right shard key, rebalancing, and cross-shard joins are difficult and error-prone.
+
+**3. Performance Degradation with Data Growth**
+- As table sizes explode, **indexing and query optimization** become less effective.
+- Joins and aggregations slow down dramatically; query plans break down.
+
+**4. Relational Model Limitations**
+- The **rigid, fixed schema** cannot easily accommodate unstructured (text, video, logs) or semi-structured (JSON, XML) data.
+- Schema changes on huge tables are very expensive.
+
+**5. High Costs**
+- Vertical scaling requires **expensive enterprise-grade hardware** (high-end servers, SAN storage).
+- The cost grows non-linearly and becomes **unsustainable** beyond a few terabytes.
+
+---
+
+#### **Scalability in Big Data Management Systems**
+
+Big Data systems (Hadoop, Spark, Cassandra, MongoDB, BigQuery) were **built ground-up for scale-out**:
+
+**1. Horizontal Scalability**
+- Designed natively for **scale-out**: simply add more commodity nodes to the cluster.
+- Cluster managers (YARN, Kubernetes) automatically distribute the new capacity.
+
+**2. Data Distribution and Replication**
+- Systems like **Hadoop HDFS** and **NoSQL stores** automatically distribute data across nodes.
+- Built-in **replication** (e.g., HDFS default 3x) provides **fault tolerance** without manual effort.
+
+**3. Schema Flexibility**
+- **NoSQL** databases support **flexible / no fixed schema**, handling structured, semi-structured, and unstructured data uniformly.
+- New fields can be added without downtime.
+
+**4. Distributed Processing**
+- Frameworks like **MapReduce and Apache Spark** process data **in parallel across all nodes**.
+- Workloads scale linearly with cluster size.
+
+**5. Cost-Effective Scaling**
+- Built on **commodity hardware** or **cloud infrastructure**, making scaling significantly cheaper than vertical RDBMS scaling.
+
+**6. Elasticity**
+- Cloud-native services (**AWS EMR, Azure Synapse, Google BigQuery**) **auto-adjust resources** based on workload.
+- Pay only for what you use; scale up for peak demand, down when idle.
+
+---
+
+#### **Side-by-Side Comparison**
+
+| Aspect | Traditional DBMS | Big Data Management System |
+|--------|-----------------|---------------------------|
+| **Scaling Type** | Vertical (scale-up) | Horizontal (scale-out) |
+| **Data Model** | Rigid relational schema | Flexible / schema-less (NoSQL) |
+| **Sharding** | Manual, complex, error-prone | Automatic distribution across nodes |
+| **Performance with Large Data** | Degrades as data grows | Scales linearly with nodes |
+| **Cost of Scaling** | High — expensive hardware | Low — commodity / cloud |
+| **Fault Tolerance** | Limited; needs extra setup | Built-in via replication |
+| **Query Flexibility** | SQL only | SQL + MapReduce + APIs + streaming |
+
+```
+  Traditional DBMS:        Big Data System:
+   ┌────────────┐           ┌───┐┌───┐┌───┐┌───┐
+   │  BIG ONE   │           │ N ││ N ││ N ││ N │   (add more nodes)
+   │   SERVER   │           └───┘└───┘└───┘└───┘
+   └────────────┘             auto-shard + replicate
+   vertical only             horizontal + elastic
+```
+
+---
+
 ## **Section 6: Traditional DBMS vs Big Data Management Systems**
+
+> PYQ: Compare Traditional Data and Big Data. (2022, 15 marks)  
+> PYQ: Explain different types of Big Data management techniques. (2023, 15 marks)
 
 ### **6.1 Overview**
 
@@ -358,7 +576,58 @@ Traditional DBMS was designed for an era of **smaller, structured data** on a **
 
 ---
 
+### **6.4 Big Data Management Techniques**
+
+> PYQ: Explain different types of Big Data management techniques. (2023, 15 marks)
+
+Modern organizations apply a **portfolio of techniques** to manage Big Data effectively. The eight most widely used are:
+
+#### **1. Data Governance**
+- Set of **policies, standards, and roles** that ensure data is **used consistently and correctly** across the organization.
+- Defines who owns data, who can access it, and how it must be handled.
+
+#### **2. Data Quality Management**
+- Continuous process of **measuring and improving** the quality of organizational data.
+- Covers accuracy, completeness, consistency, timeliness — keeps data fit for analytics.
+
+#### **3. Data Mining**
+- Applies **machine learning and statistical methods** to discover hidden patterns, correlations, and trends in large datasets.
+- Powers tasks like market basket analysis and customer segmentation.
+
+#### **4. Data Security**
+- Protects data from **unauthorized access, breaches, leakage, and loss**.
+- Uses encryption, authentication, authorization, masking, and auditing.
+
+#### **5. Big Data Analytics**
+- Extracts actionable insights from huge volumes — **market trends, customer preferences, hidden patterns**.
+- Includes descriptive, diagnostic, predictive, and prescriptive analytics.
+
+#### **6. Machine Learning**
+- Algorithms that allow systems to **learn patterns and make predictions** without being explicitly programmed.
+- Used for recommendation engines, fraud detection, image recognition.
+
+#### **7. Predictive Analytics**
+- Uses historical data + ML to **forecast future outcomes** — buyer preferences, demand, churn, equipment failure.
+- Drives proactive business decisions.
+
+#### **8. Centralized Data Management**
+- **Stores and manages all organizational data in a single repository** (data warehouse / data lake).
+- Eliminates silos, gives a unified view, simplifies governance and analytics.
+
+```
+              ┌─── Governance ──── Security ────┐
+              │                                  │
+   DATA  →   │  Quality Mgmt + Centralized Mgmt │   →  Business Value
+              │                                  │
+              └── Mining ─ Analytics ─ ML ─ Predictive ──┘
+```
+
+---
+
 ## **Section 7: Real-Life Applications**
+
+> PYQ: Describe any five real life applications of Big Data. (2022, 15 marks)  
+> PYQ: Write short note on real life applications of Big Data. (2023, 15 marks)
 
 ### **7.1 Applications of Big Data Modeling & Management**
 
@@ -389,6 +658,9 @@ Traditional DBMS was designed for an era of **smaller, structured data** on a **
 ---
 
 ## **Section 8: Data Models**
+
+> PYQ: What are different types of data models and their applications in organizing and structuring large datasets? (2024, 2.5 marks)  
+> PYQ: What is Modeling? Explain various types of data models with example. (2023, 15 marks)
 
 ### **8.1 What is a Data Model?**
 
@@ -555,11 +827,24 @@ student02 | name=Ankit           | math=75, sci=80
 ### **Data Quality Dimensions:**
 - Accuracy, Completeness, Consistency, Timeliness, Validity, Uniqueness, Integrity.
 
+### **Importance of Data Quality (5 reasons):**
+- Informed decision-making, operational efficiency, regulatory compliance, customer experience, optimized analytics.
+
+### **Data Quality Challenges at Scale (3 V's):**
+- Volume (manual checks impractical), Variety (mixed formats), Velocity (streams cause inconsistency).
+
+### **Data Quality Solutions (6 approaches):**
+- Governance frameworks, quality tools (Talend/Informatica/Nifi), profiling & monitoring, standardization, cleansing & enrichment, Master Data Management (MDM).
+
 ### **Data Ingestion Types:**
 - Batch (Sqoop), Streaming (Kafka), Micro-batch (Spark Streaming).
 
 ### **Scalability Techniques:**
 - Partitioning, Sharding, Replication, Load Balancing, Caching, Auto-scaling.
+
+### **Scalability — DBMS vs Big Data (Unified):**
+- DBMS challenges → limited horizontal scale, sharding complexity, performance drop, rigid schema, high cost.
+- Big Data wins → horizontal scale, distribution + replication, schema flexibility, distributed processing, cost-effective, elastic cloud.
 
 ### **Security Layers:**
 - Authentication, Authorization, Encryption (at rest + in transit), Auditing, Masking, Compliance.
@@ -581,11 +866,27 @@ student02 | name=Ankit           | math=75, sci=80
 ### **Types of Big Data Models:**
 Relational → Key-Value → Document → Column-Family → Graph → Array
 
+### **Big Data Management Techniques (8):**
+Data Governance, Data Quality Management, Data Mining, Data Security, Big Data Analytics, Machine Learning, Predictive Analytics, Centralized Data Management.
+
 ---
 
 ## **Expected Exam Questions**
 
-> PYQs will be added after analysis — check back soon.
+### **15-Mark Questions:**
+
+1. What is Modeling? Explain various types of data models with example. *(2023)*
+2. Explain the concept of scalability in the context of Big Data storage and management systems. Discuss the scalability challenges associated with traditional DBMS and how they differ from those of Big Data Management System. *(2024)*
+3. Discuss the importance of data quality in Big Data Management. What are the key challenges in ensuring data quality at scale? How can organizations address these challenges effectively? *(2024)*
+4. Explain different types of Big Data management techniques. *(2023)*
+5. Compare Traditional Data and Big Data. *(2022)*
+6. Describe any five real life applications of Big Data. *(2022)*
+7. Write short note on real life applications of Big Data. *(2023)*
+
+### **Short Answer Questions (2.5 marks):**
+
+1. Write short note on Data Ingestion. *(2023)*
+2. What are different types of data models and their applications in organizing and structuring large datasets? *(2024)*
 
 ---
 
