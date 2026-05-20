@@ -18,11 +18,35 @@ Sensor Network Platforms and Tools: Sensor Network Hardware, Berkeley motes, Sen
 
 ## 🎯 PYQ Analysis for Unit 4
 
-> PYQs will be added after analysis — check back soon.
+### **High Priority Topics** (15 marks questions)
+
+1. **TinyOS — Features, Limitations & Resource-Constrained Support** — (May 2025: 15, Dec 2025: 15)
+2. **Intrusion Detection System + Network Simulator** — (May 2023: 15, Dec 2023: 15, Jul 2022: 15)
+3. **Dynamic Nature of WSNs + Secure Routing** — (May 2023: 15)
+4. **Cooperation in MANETs + Sensor Network Tools** — (Jul 2022: 15)
+5. **Intrusion Detection System + Sensor Networks & Mobile Robots** — (Jul 2022: 15)
+6. **QoS in WSN + Transport Layer Issues** — (Dec 2023: 7+8=15)
+7. **Routing Issues in WSN + Localization** — (Dec 2023: 7+8=15)
+
+### **Medium Priority Topics** (Short answers / 7–8 marks)
+
+1. **Dynamic Nature of WSN** — Dec 2025 (2.5 marks)
+2. **Intrusion Detection System** — Dec 2025 (2.5 marks)
+3. **Passive Attacks** — Dec 2025 (2.5 marks)
+4. **TinyOS** — May 2023 (2.5 marks)
+5. **Tiny GALS** — May 2025 (3 marks)
+6. **Key Management** — May 2023 (2.5 marks)
+7. **Secure Routing** — Jul 2022 (2.5 marks)
+8. **Berkeley Motes** — Jul 2022 (2.5 marks)
+9. **NS-2 Functionalities** — May 2025, Dec 2025 (8 marks)
+10. **TOSSIM Simulator** — May 2025 (7 marks)
+11. **Security Challenges in WSN (four major)** — Dec 2025 (7 marks)
 
 ---
 
 ## **Section 1: Routing Layer in Sensor Networks**
+
+> PYQ: Appraise the issues related to routing in wireless sensor networks. (Dec 2023, 7 marks)
 
 ### **1.1 Why WSN Routing is Different**
 
@@ -342,6 +366,10 @@ CH1 aggregates (avg/max/min) and sends compressed data to SINK
 
 ## **Section 2: Transport Layer in Sensor Networks**
 
+> PYQ: Appraise the QoS related measures in wireless sensor networks. (Dec 2023, 7 marks)  
+> PYQ: Outline the issues related to the transport layer in wireless sensor networks. (Dec 2023, 8 marks)  
+> PYQ: What is Quality of Service (QOS)? (Dec 2023, 2.5 marks)
+
 ### **2.1 Why TCP is NOT Suitable for WSN**
 
 TCP was designed for wired networks with reliable links and stable topology. In WSNs:
@@ -635,6 +663,8 @@ B adjusts its clock by the computed offset.
 
 ### **3.4 Localization**
 
+> PYQ: Present an overview of localization in wireless sensor network. (Dec 2023, 8 marks)
+
 Most sensor applications need to know WHERE a sensor is located. GPS is too expensive (cost, energy, size) for every node.
 
 #### **GPS-free Localization Approaches:**
@@ -663,6 +693,10 @@ Trilateration Example:
 ---
 
 ## **Section 4: Dynamic Nature of WSNs and Mobile Robots**
+
+> PYQ: Define dynamic nature of WSN. (Dec 2025, 2.5 marks)  
+> PYQ: Explain Dynamic nature of WSNs and Secure routing in WSNs. (May 2023, 2×7.5=15 marks)  
+> PYQ: Explain Sensor Networks & mobile robots. (Jul 2022, 7.5 marks)
 
 ### **4.1 Adapting to Dynamic Changes**
 
@@ -754,6 +788,9 @@ Mobile Sink (robot):
 ---
 
 ## **Section 5: Security in Ad Hoc Networks**
+
+> PYQ: Explain any four major challenges of security in WSN. (Dec 2025, 7 marks)  
+> PYQ: List the different types of passive attacks. (Dec 2025, 2.5 marks)
 
 ### **5.1 Why Security is Hard in MANETs/WSNs**
 
@@ -870,6 +907,8 @@ Wormhole: Attacker at B tunnels packets to E
 
 ## **Section 6: Key Management**
 
+> PYQ: Briefly explain Key Management. (May 2023, 2.5 marks)
+
 ### **6.1 Why Key Management is Critical**
 
 - Encryption requires **keys** shared between communicating parties
@@ -967,6 +1006,9 @@ When a node is compromised (captured by attacker), its keys must be revoked:
 
 ## **Section 7: Secure Routing**
 
+> PYQ: Briefly explain Secure routing. (Jul 2022, 2.5 marks)  
+> PYQ: Explain Secure routing in WSNs. (May 2023, 7.5 marks)
+
 ### **7.1 Threats to Routing Protocols**
 
 Routing protocols in MANETs/WSNs are particularly vulnerable because:
@@ -1059,6 +1101,11 @@ D sends RREP back along reverse path (also authenticated)
 ---
 
 ## **Section 8: Cooperation and Intrusion Detection in MANETs**
+
+> PYQ: Explain Intrusion Detection System. (Dec 2025, 2.5 marks)  
+> PYQ: Explain Intrusion Detection System and Network Simulator. (May 2023, Dec 2023, 2×7.5=15 marks)  
+> PYQ: Explain Intrusion Detection System and Sensor Networks & mobile robots. (Jul 2022, 7.5×2=15 marks)  
+> PYQ: Explain Cooperation in MANETs and Sensor Network tools. (Jul 2022, 7.5×2=15 marks)
 
 ### **8.1 The Cooperation Problem**
 
@@ -1205,6 +1252,8 @@ An **IDS** monitors the network for signs of malicious activity and raises alert
 
 ## **Section 9: Sensor Network Hardware — Berkeley Motes**
 
+> PYQ: Briefly explain Berkeley Motes. (Jul 2022, 2.5 marks)
+
 ### **9.1 What is a Mote?**
 
 A **mote** is a tiny, self-contained sensor node designed for wireless sensor networks. The term "mote" (particle of dust) reflects the goal of making sensor nodes as small and inexpensive as possible.
@@ -1312,6 +1361,10 @@ A **mote** is a tiny, self-contained sensor node designed for wireless sensor ne
 ---
 
 ## **Section 10: TinyOS and nesC**
+
+> PYQ: What is TinyOS? (May 2023, 2.5 marks)  
+> PYQ: Explain the features and limitations of Tiny OS. (May 2025, 15 marks)  
+> PYQ: Explain how the TinyOS operating system supports resource constrained hardware platforms. Discuss in detail. (Dec 2025, 15 marks)
 
 ### **10.1 What is TinyOS?**
 
@@ -1465,6 +1518,8 @@ nesC source files (.nc)
 
 ### **10.4 TinyGALS (Dataflow Style)**
 
+> PYQ: Explain Tiny GALS. (May 2025, 3 marks)
+
 **TinyGALS (TinyOS Global Asynchronous Locally Synchronous)** is an alternative programming model for TinyOS that uses a **dataflow** paradigm.
 
 #### **GALS Model:**
@@ -1505,6 +1560,11 @@ TinyGALS Architecture:
 ---
 
 ## **Section 11: Simulators**
+
+> PYQ: Write the functionalities of NS-2 in the simulation of sensor network. (May 2025, Dec 2025, 8 marks)  
+> PYQ: Mention the use of TOSSIM simulator in modelling wireless network. (May 2025, 7 marks)  
+> PYQ: Explain Network Simulator. (May 2023, Dec 2023, 7.5–8 marks)  
+> PYQ: Explain Sensor Network tools. (Jul 2022, 7.5 marks)
 
 ### **11.1 ns2 and Sensor Network Extension**
 
@@ -1727,7 +1787,33 @@ This lets you test your TinyOS application in simulation before flashing it to r
 
 ## **Expected Exam Questions**
 
-> PYQs will be added after analysis — check back soon.
+### **15-mark Questions**
+
+1. Explain the features and limitations of Tiny OS. *(May 2025)*
+2. Explain how the TinyOS operating system supports resource constrained hardware platforms. *(Dec 2025)*
+3. Explain Intrusion Detection System and Network Simulator. *(May 2023, Dec 2023)*
+4. Explain Intrusion Detection System and Sensor Networks & mobile robots. *(Jul 2022)*
+5. Explain Cooperation in MANETs and Sensor Network tools. *(Jul 2022)*
+6. Explain Dynamic nature of WSNs and Secure routing in WSNs. *(May 2023)*
+7. Appraise the QoS related measures + Outline the issues related to the transport layer in WSN. *(Dec 2023)*
+8. Appraise the issues related to routing in WSN + Present an overview of localization in WSN. *(Dec 2023)*
+
+### **7–8 mark Questions**
+
+1. Write the functionalities of NS-2 in the simulation of sensor network. *(May 2025, Dec 2025)*
+2. Mention the use of TOSSIM simulator in modelling wireless network. *(May 2025)*
+3. Explain any four major challenges of security in WSN. *(Dec 2025)*
+
+### **Short Answer (2.5–3 marks)**
+
+1. Explain Intrusion Detection System. *(Dec 2025)*
+2. Define dynamic nature of WSN. *(Dec 2025)*
+3. List the different types of passive attacks. *(Dec 2025)*
+4. Explain Tiny GALS. *(May 2025)*
+5. What is TinyOS? *(May 2023)*
+6. Briefly explain Key Management. *(May 2023)*
+7. Briefly explain Secure routing. *(Jul 2022)*
+8. Briefly explain Berkeley Motes. *(Jul 2022)*
 
 ---
 

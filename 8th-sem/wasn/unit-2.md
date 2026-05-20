@@ -14,7 +14,22 @@ Data Transmission: Broadcast storm problem, Broadcasting, Multicasting and Geoca
 
 ## 🎯 PYQ Analysis for Unit 2
 
-> PYQs will be added after analysis — check back soon.
+### **High Priority Topics** (15 marks questions)
+
+1. **TCP over Ad-hoc Wireless Networks (TCP + Solutions)** — (May 2023: 15, Jul 2022: 15, Dec 2023: 15)
+2. **Broadcast Storm Problem + Transmission Control Protocol** — (May 2023: 7+8, Jul 2022: 7+8)
+3. **Geocasting (with application)** — (Dec 2025: 8 marks)
+4. **Multicast (with application)** — (May 2025: 8 marks)
+5. **Hidden-Terminal & Exposed-Terminal Problem (how avoided)** — (Dec 2025: 7 marks)
+
+### **Medium Priority Topics** (Short answers)
+
+1. **Broadcast Storm Problem** — Dec 2025 (2.5 marks)
+2. **TCP Protocol** — Dec 2023 (2.5 marks)
+3. **Geocasting** — May 2023 (2.5 marks)
+4. **Multicasting** — Jul 2022 (2.5 marks)
+5. **TCP Variations (2 of them) with advantages/disadvantages** — May 2025, Dec 2025 (7 marks)
+6. **Broadcast Storm Problem — How to avoid?** — May 2025 (7 marks)
 
 ---
 
@@ -92,6 +107,10 @@ All nodes A, B, C, D, E, F, G have received P.
 ---
 
 ### **1.3 The Broadcast Storm Problem**
+
+> PYQ: What is broadcast storm problem? (Dec 2025, 2.5 marks)  
+> PYQ: What is broadcast storm problem? How to avoid this problem? (May 2025, 7 marks)  
+> PYQ: Explain Broadcast storm problem. (May 2023, 7 marks; Jul 2022, 8 marks)
 
 #### **Definition:**
 
@@ -358,6 +377,9 @@ N2 receives but DISCARDS — no storm!
 
 ## **Section 2: Multicasting in MANETs**
 
+> PYQ: What is multicast? Explain any one application of multicast in detail. (May 2025, 8 marks)  
+> PYQ: What is Multicasting? (Jul 2022, 2.5 marks)
+
 ### **2.1 What is Multicasting?**
 
 **Multicasting** is a **one-to-many** communication model where packets from a single source are delivered to a **specific group** of nodes (multicast group members), not all nodes.
@@ -621,6 +643,9 @@ Data Delivery:
 
 ## **Section 3: Geocasting in MANETs**
 
+> PYQ: What is Geocasting? Explain any one application of Geocasting in detail. (Dec 2025, 8 marks)  
+> PYQ: What is Geocasting? (May 2023, 2.5 marks)
+
 ### **3.1 What is Geocasting?**
 
 **Geocasting** is a special form of multicasting where the **multicast group is defined by geographic location** rather than explicit group membership. A packet is delivered to **all nodes within a specified geographic region**.
@@ -760,6 +785,10 @@ Nodes outside the zone discard it.
 ---
 
 ## **Section 4: TCP Protocol Overview**
+
+> PYQ: What is TCP protocol? (Dec 2023, 2.5 marks)  
+> PYQ: Explain Transmission control protocol. (May 2023, 8 marks; Jul 2022, 7 marks)  
+> PYQ: What is TCP? Discuss with an example TCP over Ad-hoc wireless networks. (Dec 2023, 15 marks)
 
 ### **4.1 TCP Basics**
 
@@ -976,6 +1005,8 @@ Even a **1% bit error rate** on each of 5 hops = only (0.99)^5 ≈ 95% success p
 
 ### **5.4 Problem 3: Hidden Terminal Problem**
 
+> PYQ: Explain the hidden-terminal problem and the exposed-terminal problem. How can it be avoided? (Dec 2025, 7 marks)
+
 ```
 Topology:
   A   C   B
@@ -1050,6 +1081,10 @@ Also: ACK compression (many ACKs queued) → burst of ACKs
 ---
 
 ## **Section 6: Solutions for TCP over Ad Hoc**
+
+> PYQ: Discuss different solutions for TCP over Adhoc network in detail. (May 2023, Jul 2022, 15 marks)  
+> PYQ: Explain any two variations in TCP protocol with their advantages and disadvantages. (May 2025, Dec 2025, 7 marks)  
+> PYQ: What is TCP? Discuss with an example TCP over Ad-hoc wireless networks. (Dec 2023, 15 marks)
 
 ### **6.1 Indirect TCP (I-TCP)**
 
@@ -1410,7 +1445,26 @@ Require no protocol changes?
 
 ## **Expected Exam Questions**
 
-> PYQs will be added after analysis — check back soon.
+### **15-mark Questions**
+
+1. What is TCP? Discuss with an example TCP over Ad-hoc wireless networks. *(Dec 2023)*
+2. Discuss different solutions for TCP over Adhoc network in detail. *(May 2023, Jul 2022)*
+3. Explain Broadcast storm problem and Transmission control protocol. *(May 2023: 7+8, Jul 2022: 7+8)*
+
+### **7–8 mark Questions**
+
+1. What is broadcast storm problem? How to avoid this problem? *(May 2025)*
+2. What is multicast? Explain any one application of multicast in detail. *(May 2025)*
+3. What is Geocasting? Explain any one application of Geocasting in detail. *(Dec 2025)*
+4. Explain the hidden-terminal problem and the exposed-terminal problem. How can it be avoided? *(Dec 2025)*
+5. Explain any two variations in TCP protocol with their advantages and disadvantages. *(May 2025, Dec 2025)*
+
+### **Short Answer (2.5–3 marks)**
+
+1. What is broadcast storm problem? *(Dec 2025)*
+2. What is TCP protocol? *(Dec 2023)*
+3. What is Geocasting? *(May 2023)*
+4. What is Multicasting? *(Jul 2022)*
 
 ---
 

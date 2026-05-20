@@ -14,11 +14,36 @@ Basics of Wireless, Sensors and Applications: Applications, Classification of se
 
 ## 🎯 PYQ Analysis for Unit 3
 
-> PYQs will be added after analysis — check back soon.
+### **High Priority Topics** (15 marks questions)
+
+1. **Architecture of Wireless Sensor Network (with diagram)** — (Dec 2023: 15, Jul 2022: 15)
+2. **Classification of Wireless Sensor Networks + Applications** — (May 2023: 15)
+3. **Physical and MAC Layer of WSN** — (May 2023: 15, Jul 2022: 15 — incl. Link Layer)
+4. **MAC Protocols for WSN** — (Dec 2023: 15)
+5. **Design Goals of MAC Protocol for Ad-Hoc Networks** — (May 2025: 15)
+6. **Components of a Sensor Node (role & limitations)** — (Dec 2025: 15)
+
+### **Medium Priority Topics** (Short answers)
+
+1. **Wireless Sensor Network** — Dec 2023 (2.5 marks)
+2. **Cellular vs Ad-hoc wireless network** — Dec 2023 (2.5 marks)
+3. **MAC Layer** — Dec 2023 (2.5 marks)
+4. **Link Layer** — Jul 2022 (2.5 marks)
+5. **Sensors / Active vs Passive sensors** — May 2023, May 2025 (2.5–3 marks)
+6. **WSN** — Jul 2022 (2.5 marks)
+7. **Data relaying in wireless sensor network** — Dec 2023 (2.5 marks)
+8. **MAC Protocols for WSN / Issues in MAC for Ad-hoc** — May 2025, Dec 2025 (8 marks)
+9. **Sensor Network Architecture (with diagram)** — May 2025, Dec 2025 (7 marks)
 
 ---
 
 ## **Section 1: Introduction to Wireless Sensor Networks (WSN)**
+
+> PYQ: What is a Wireless sensor network? (Dec 2023, 2.5 marks)  
+> PYQ: What is WSN? (Jul 2022, 2.5 marks)  
+> PYQ: Explain Sensors. (May 2023, 2.5 marks)  
+> PYQ: Differentiate between active and passive sensors. (May 2025, 3 marks)  
+> PYQ: What is data relaying in wireless sensor network? (Dec 2023, 2.5 marks)
 
 ### **1.1 What is a WSN?**
 
@@ -41,6 +66,8 @@ WSNs operate without fixed infrastructure and are often deployed in harsh, inacc
 ---
 
 ### **1.2 WSN vs MANET — Key Differences**
+
+> PYQ: Difference between cellular network and ad-hoc wireless network. (Dec 2023, 2.5 marks)
 
 | Feature | WSN | MANET |
 |---|---|---|
@@ -89,6 +116,8 @@ WSNs operate without fixed infrastructure and are often deployed in harsh, inacc
 ---
 
 ## **Section 2: Applications of Sensor Networks**
+
+> PYQ: Discuss the classification of wireless sensor networks and its applications in detail. (May 2023, 15 marks)
 
 WSNs are deployed across a wide range of domains. The key driving factor is the ability to place sensors in locations that are **inaccessible, hazardous, or impractical** for wired sensing.
 
@@ -182,6 +211,8 @@ Military applications were among the **first motivators** for WSN research.
 
 ## **Section 3: Classification of Sensor Networks**
 
+> PYQ: Discuss the classification of wireless sensor networks and its applications in detail. (May 2023, 15 marks)
+
 Sensor networks can be classified along multiple dimensions based on deployment, mobility, communication model, and other factors.
 
 ---
@@ -254,6 +285,11 @@ Single-hop:                     Multi-hop:
 ---
 
 ## **Section 4: Architecture of Sensor Network**
+
+> PYQ: Elaborate the sensor network architecture with a diagram. (May 2025, Dec 2025, 7 marks)  
+> PYQ: Explain the architecture of wireless sensor network in detail. (Jul 2022, 15 marks)  
+> PYQ: Discuss architecture of wireless sensor network with diagrammatic illustration. (Dec 2023, 15 marks)  
+> PYQ: What are the main components of a sensor node? Discuss its role and limitations. (Dec 2025, 15 marks)
 
 ### **4.1 Sensor Node — Block Diagram**
 
@@ -428,6 +464,9 @@ Hierarchical tree rooted at the base station.
 
 ## **Section 5: Physical Layer**
 
+> PYQ: Explain the physical and MAC layer of Wireless sensor network in detail. (May 2023, 15 marks)  
+> PYQ: Explain the Physical Layer of WSN. (Jul 2022, part of 5×3=15 marks)
+
 The **Physical (PHY) layer** is responsible for the actual transmission and reception of raw bits over the wireless channel.
 
 ---
@@ -563,6 +602,14 @@ Key insight: **Idle listening wastes almost as much energy as active receiving**
 ---
 
 ## **Section 6: MAC Layer**
+
+> PYQ: What is MAC Layer? (Dec 2023, 2.5 marks)  
+> PYQ: Explain MAC protocols for wireless sensor Networks. (May 2025, 8 marks)  
+> PYQ: Present an overview of MAC protocols for wireless sensor networks. (Dec 2023, 15 marks)  
+> PYQ: List the design goals of MAC protocol for ad-hoc networks. (May 2025, 15 marks)  
+> PYQ: List the issues of designing a MAC protocol for ad hoc networks. (Dec 2025, 8 marks)  
+> PYQ: Explain the physical and MAC layer of Wireless sensor network in detail. (May 2023, 15 marks)  
+> PYQ: Explain the MAC Layer of WSN. (Jul 2022, part of 5×3=15 marks)
 
 The **Medium Access Control (MAC) layer** controls how sensor nodes share the wireless channel. In WSN, MAC design is **energy-centric**, unlike traditional MACs that focus on throughput and fairness.
 
@@ -775,6 +822,9 @@ Each node is assigned a TDMA slot but can also use others' slots when idle. Swit
 ---
 
 ## **Section 7: Link Layer**
+
+> PYQ: What is a Link Layer? (Jul 2022, 2.5 marks)  
+> PYQ: Explain the Link Layer of WSN. (Jul 2022, part of 5×3=15 marks)
 
 The **Link Layer** (Data Link Layer) ensures reliable frame delivery between directly connected nodes. In WSN, links are often **lossy** due to interference, fading, and node mobility, making link-layer reliability critical.
 
@@ -1037,7 +1087,33 @@ WSN links are inherently **lossy**:
 
 ## **Expected Exam Questions**
 
-> PYQs will be added after analysis — check back soon.
+### **15-mark Questions**
+
+1. Explain the architecture of wireless sensor network in detail. *(Jul 2022)*
+2. Discuss architecture of wireless sensor network with diagrammatic illustration. *(Dec 2023)*
+3. Discuss the classification of wireless sensor networks and its applications in detail. *(May 2023)*
+4. Explain the physical and MAC layer of Wireless sensor network in detail. *(May 2023)*
+5. Explain the following layers of WSN: Physical, MAC, Link. *(Jul 2022)*
+6. Present an overview of MAC protocols for wireless sensor networks. *(Dec 2023)*
+7. List the design goals of MAC protocol for ad-hoc networks. *(May 2025)*
+8. What are the main components of a sensor node? Discuss its role and limitations. *(Dec 2025)*
+
+### **7–8 mark Questions**
+
+1. Elaborate the sensor network architecture with a diagram. *(May 2025, Dec 2025)*
+2. Explain MAC protocols for wireless sensor Networks. *(May 2025)*
+3. List the issues of designing a MAC protocol for ad hoc networks. *(Dec 2025)*
+
+### **Short Answer (2.5–3 marks)**
+
+1. What is a Wireless sensor network? *(Dec 2023)*
+2. What is WSN? *(Jul 2022)*
+3. What is MAC Layer? *(Dec 2023)*
+4. What is a Link Layer? *(Jul 2022)*
+5. Explain Sensors. *(May 2023)*
+6. Differentiate between active and passive sensors. *(May 2025)*
+7. Difference between cellular network and ad-hoc wireless network. *(Dec 2023)*
+8. What is data relaying in wireless sensor network? *(Dec 2023)*
 
 ---
 

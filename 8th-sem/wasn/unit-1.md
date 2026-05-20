@@ -14,7 +14,25 @@ pdfUrl: ""
 
 ## 🎯 PYQ Analysis for Unit 1
 
-> PYQs will be added after analysis — check back soon.
+### **High Priority Topics** (15 marks questions)
+
+1. **Characteristics & Applications of MANETs** — (May 2023: 15 marks, Dec 2023: 15 marks, Jul 2022: 15 marks)
+2. **Applications + Challenges of MANETs** — (Dec 2023: 15 marks, Jul 2022: 15 marks)
+3. **Routing Algorithms of MANETs / Routing Taxonomy** — (Jul 2022: 15 marks, May 2025: 8+7=15)
+4. **Position-Based Routing Algorithms** — (Dec 2023: 15 marks)
+5. **Characteristics of Wireless Channel** — (Dec 2023: 15 marks)
+6. **Challenges in Designing Routing Algorithms** — (Dec 2025: 8 marks)
+7. **Demand Routing Protocol (Reactive)** — (Dec 2025: 7 marks)
+
+### **Medium Priority Topics** (Short answers)
+
+1. **Characteristics of MANET** — Dec 2025 (2.5 marks)
+2. **Reactive vs Proactive Routing** — Dec 2025, May 2025, Dec 2023 (2.5–3 marks)
+3. **Hidden Terminal Problem** — May 2025 (3 marks)
+4. **Routing Table** — May 2025 (3 marks)
+5. **Routing Layer** — May 2023 (2.5 marks)
+6. **MANET** — May 2023, Jul 2022 (2.5 marks)
+7. **Issues in Adhoc Wireless Sensor Network** — Dec 2025 (8 marks)
 
 ---
 
@@ -111,6 +129,12 @@ There are three primary types of ad hoc networks, each suited for a different us
 ---
 
 ## **Section 2: Characteristics of MANETs**
+
+> PYQ: What are the characteristics of MANET. (Dec 2025, 2.5 marks)  
+> PYQ: Explain the characteristics of Mobile Ad hoc Networks (MANETs). (May 2025, 8 marks)  
+> PYQ: Discuss the characteristics & applications of MANETs in detail. (May 2023, 15 marks)  
+> PYQ: Discuss the characteristics of wireless channel. (Dec 2023, 15 marks)  
+> PYQ: Briefly explain MANET. (May 2023, Jul 2022, 2.5 marks)
 
 ### **2.1 Overview**
 
@@ -225,6 +249,11 @@ Source ──► Node A ──► Node B ──► Node C ──► Destination
 
 ## **Section 3: Applications of MANETs**
 
+> PYQ: List and brief the various applications of MANETs. (May 2025, Dec 2025, 7 marks)  
+> PYQ: What are the applications of MANET and challenges of MANET? (Dec 2023, 15 marks)  
+> PYQ: Explain Applications of MANETs and Challenges of MANETs. (Jul 2022, 7.5×2=15 marks)  
+> PYQ: Discuss the characteristics & applications of MANETs in detail. (May 2023, 15 marks)
+
 ### **3.1 Military / Battlefield Communication**
 
 This is the **original motivation** for MANET research.
@@ -326,6 +355,10 @@ When natural disasters (earthquakes, floods, hurricanes) destroy existing infras
 
 ## **Section 4: Challenges of MANETs**
 
+> PYQ: Discuss the various issues in Adhoc Wireless sensor network. (Dec 2025, 8 marks)  
+> PYQ: What are the applications of MANET and challenges of MANET? (Dec 2023, 15 marks)  
+> PYQ: Challenges of MANETs. (Jul 2022, 7.5 marks)
+
 ### **4.1 Routing Challenges**
 
 Routing is the most fundamental challenge in MANETs.
@@ -417,6 +450,8 @@ Optimal = balance between number of hops and power per hop
 
 ### **4.7 Hidden Node Problem**
 
+> PYQ: What is hidden terminal problem? (May 2025, 3 marks)
+
 ```
          A ──────────────► B ◄───────────── C
          |        range    |       range    |
@@ -462,6 +497,11 @@ Optimal = balance between number of hops and power per hop
 ---
 
 ## **Section 5: Routing in MANETs**
+
+> PYQ: What do you mean by a routing table. (May 2025, 3 marks)  
+> PYQ: Explain Routing Layer. (May 2023, 2.5 marks)  
+> PYQ: Explain the challenges in designing routing algorithms. (Dec 2025, 8 marks)  
+> PYQ: Discuss different routing algorithms of MANETs in detail. (Jul 2022, 15 marks)
 
 ### **5.1 Why Routing in MANETs is Different**
 
@@ -530,6 +570,8 @@ MANET routing protocols can be classified based on several different criteria:
 
 ### **5.3 Taxonomy of MANET Routing Algorithms**
 
+> PYQ: Give the taxonomy of MANET routing algorithm. (May 2025, 8 marks)
+
 ```
                   ┌──────────────────────────────────┐
                   │     MANET Routing Algorithms      │
@@ -552,6 +594,14 @@ Proactive Reactive Hybrid   GPSR               Power  Multipath  QoS
 ---
 
 ## **Section 6: Topology-Based Routing Algorithms**
+
+> PYQ: Explain and illustrate any one Topology-based Routing algorithm. (May 2025, 7 marks)  
+> PYQ: How a reactive routing protocol is different from a proactive routing protocol? (May 2025, Dec 2025, Dec 2023, 2.5–3 marks)  
+> PYQ: Explain Reactive Routing Protocol and Proactive Routing Protocol in detail. (May 2023, 2×7.5=15 marks)  
+> PYQ: Discuss any four reactive routing protocols for Ad-hoc wireless networks. (Dec 2023, 15 marks)  
+> PYQ: Illustrate the table driven routing algorithm — Cluster Head Gateway routing protocol. (Dec 2025, 8 marks)  
+> PYQ: Differentiate DSDV and AODV. (May 2025, 8 marks)  
+> PYQ: Give the significance of the principle involved in a demand routing protocol. (Dec 2025, 7 marks)
 
 **Topology-based routing** uses information about the **network graph** (which nodes exist and which links connect them) to make routing decisions. There are three main sub-types:
 
@@ -928,6 +978,8 @@ ZRP divides the network into **zones** around each node. Within the zone, proact
 ---
 
 ## **Section 7: Position-Based Routing Algorithms**
+
+> PYQ: Explain position based routing algorithms. (Dec 2023, 15 marks)
 
 ### **7.1 Why Position-Based Routing?**
 
@@ -1309,7 +1361,37 @@ MANET Routing
 
 ## **Expected Exam Questions**
 
-> PYQs will be added after analysis — check back soon.
+### **15-mark Questions**
+
+1. Discuss the characteristics & applications of MANETs in detail. *(May 2023)*
+2. Discuss the characteristics of wireless channel. *(Dec 2023)*
+3. What are the applications of MANET and challenges of MANET? *(Dec 2023)*
+4. Explain Applications of MANETs and Challenges of MANETs. *(Jul 2022)*
+5. Discuss different routing algorithms of MANETs in detail. *(Jul 2022)*
+6. Explain position based routing algorithms. *(Dec 2023)*
+7. Explain Reactive Routing Protocol and Proactive Routing Protocol in detail. *(May 2023)*
+8. Discuss any four reactive routing protocols for Ad-hoc wireless networks. *(Dec 2023)*
+
+### **7–8 mark Questions**
+
+1. Explain the characteristics of Mobile Ad hoc Networks (MANETs). *(May 2025)*
+2. List and brief the various applications of MANETs. *(May 2025, Dec 2025)*
+3. Discuss the various issues in Adhoc Wireless sensor network. *(Dec 2025)*
+4. Give the taxonomy of MANET routing algorithm. *(May 2025)*
+5. Explain and illustrate any one Topology-based Routing algorithm. *(May 2025)*
+6. Explain the challenges in designing routing algorithms. *(Dec 2025)*
+7. Give the significance of the principle involved in a demand routing protocol. *(Dec 2025)*
+8. Illustrate the table driven routing algorithm — Cluster Head Gateway routing protocol. *(Dec 2025)*
+9. Differentiate DSDV and AODV. *(May 2025)*
+
+### **Short Answer (2.5–3 marks)**
+
+1. What are the characteristics of MANET? *(Dec 2025)*
+2. How a reactive routing protocol is different from a proactive routing protocol? *(May 2025, Dec 2025, Dec 2023)*
+3. What is hidden terminal problem? *(May 2025)*
+4. What do you mean by a routing table. *(May 2025)*
+5. Explain Routing Layer. *(May 2023)*
+6. What is MANET? *(May 2023, Jul 2022)*
 
 ---
 
