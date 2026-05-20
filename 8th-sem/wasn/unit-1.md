@@ -722,6 +722,65 @@ A selects B and D as MPRs → only B and D re-broadcast (2 re-broadcasts)
 
 ---
 
+#### **6.1.3 CGSR (Cluster-head Gateway Switch Routing)**
+
+**Definition:**
+
+**CGSR** is a hierarchical, table-driven (proactive) routing protocol that organizes the MANET into **clusters**, each managed by an elected **cluster head (CH)**. Nodes that belong to two or more clusters act as **gateways** and forward packets between clusters. CGSR builds on top of DSDV — every node still maintains DSDV-style tables — but routing decisions are made hierarchically (cluster-head → gateway → cluster-head).
+
+**Architecture:**
+
+```
+   ┌──── Cluster A ────┐        ┌──── Cluster B ────┐
+   │   N1       N2     │        │   N6       N7     │
+   │       \   /       │        │       \   /       │
+   │        CH-A  ────► Gateway ◄────  CH-B          │
+   │       /   \       │        │       /   \       │
+   │   N3       N4     │        │   N8       N9     │
+   └───────────────────┘        └───────────────────┘
+```
+
+**Node Roles:**
+
+| Role | Function |
+|------|----------|
+| **Cluster Head (CH)** | Coordinates intra-cluster traffic, schedules medium access, forwards inter-cluster traffic |
+| **Gateway** | Belongs to two or more clusters; bridges traffic between cluster heads |
+| **Ordinary Node** | Member of one cluster; sends/receives through its CH |
+
+**Cluster Head Election:**
+
+CGSR uses the **Lowest-ID (LID)** or **Highest-Connectivity (HC)** algorithm:
+- LID: Node with the lowest ID in its 1-hop neighborhood becomes CH.
+- HC: Node with the most neighbors becomes CH.
+
+Each node maintains:
+1. **Cluster Member Table** — which CH each destination belongs to.
+2. **Routing Table** — next hop to reach each CH (DSDV-style).
+
+**Working — Packet Forwarding:**
+
+```
+Source S (in Cluster A)  ──►  CH-A  ──►  Gateway  ──►  CH-B  ──►  Destination D (in Cluster B)
+```
+
+1. Source looks up destination's CH in its Cluster Member Table.
+2. Packet is sent to the local CH.
+3. CH forwards to a gateway leading toward the destination's CH.
+4. Final CH delivers the packet to the destination.
+
+**Advantages:**
+✅ Reduces routing overhead — only CHs and gateways carry routing intelligence.  
+✅ Better channel utilization through CH-coordinated MAC scheduling.  
+✅ Scales better than flat proactive protocols.
+
+**Disadvantages:**
+❌ **Cluster head bottleneck** — CH failure disrupts the entire cluster.  
+❌ Frequent re-election of CHs due to mobility causes overhead.  
+❌ CHs drain battery faster (single point of energy failure).
+
+---
+
 ### **6.2 Reactive (On-Demand) Routing**
 
 **Definition:**

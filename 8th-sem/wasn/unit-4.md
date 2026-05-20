@@ -537,6 +537,48 @@ Step 5: Sources further reduce rates or defer transmissions
 
 ---
 
+### **2.6 Quality of Service (QoS) in WSN**
+
+**Definition:**
+
+**Quality of Service (QoS)** in a Wireless Sensor Network is the network's ability to deliver data with **measurable performance guarantees** — meeting application-specific requirements for reliability, latency, throughput, and energy efficiency under the constraints of low-power, lossy, multi-hop wireless communication.
+
+Unlike traditional networks where QoS focuses on bandwidth/jitter for multimedia, **WSN QoS is dominated by energy efficiency and event-fidelity** because data is sensed, not streamed.
+
+**QoS Parameters / Measures in WSN:**
+
+| Parameter | Meaning in WSN context |
+|-----------|------------------------|
+| **Reliability** | Fraction of sensed events that reach the sink correctly |
+| **End-to-end latency** | Time from event detection to sink delivery — critical for alerts |
+| **Throughput** | Aggregate sensed data delivered per unit time |
+| **Energy efficiency / network lifetime** | Joules per delivered packet; time until first node death |
+| **Coverage** | Fraction of monitored area actually sensed |
+| **Connectivity** | Probability that any node can reach the sink |
+| **Packet loss / delivery ratio** | Packets received vs sent |
+| **Jitter** | Variation in inter-packet arrival time |
+| **Fault tolerance** | Ability to keep delivering data despite node failures |
+
+**Why QoS is Hard in WSN:**
+
+- Resource-constrained nodes (CPU, memory, battery).
+- Unreliable wireless links with high bit-error rates.
+- Dynamic topology (node death, mobility, new joins).
+- Many-to-one traffic pattern toward the sink causes funnelling congestion.
+- Trade-off: stronger QoS guarantees burn more energy → shorter lifetime.
+
+**QoS Mechanisms / Protocols in WSN:**
+
+1. **SAR (Sequential Assignment Routing)** — builds multiple disjoint paths from sink; picks one based on QoS metric (delay, energy) and packet priority.
+2. **SPEED** — soft real-time routing; maintains a desired per-hop delivery speed across the network; uses neighbor feedback and back-pressure rerouting.
+3. **MMSPEED (Multi-path Multi-SPEED)** — extends SPEED with multiple delivery speed levels and probabilistic multi-path forwarding for reliability + timeliness differentiation.
+4. **RAP (Real-time communication Architecture)** — uses Velocity Monotonic Scheduling to meet packet deadlines.
+5. **Differentiated MAC schedules** — priority queues at the MAC layer for critical traffic.
+
+**Cross-Layer QoS:** Because no single layer can deliver QoS alone, WSN architectures often combine routing-layer path selection, MAC-layer scheduling, and application-layer admission control.
+
+---
+
 ## **Section 3: Application Layer Support**
 
 ### **3.1 Data Aggregation and Fusion**
@@ -1424,6 +1466,27 @@ Task:
 - **Commands**: Called by application to request service (synchronous, non-blocking call downward)
 - **Events**: Signaled by hardware/components to notify application (asynchronous, upward)
 - **Tasks**: Deferred computation, posted to run in background
+
+---
+
+### **10.2.1 Limitations of TinyOS**
+
+While TinyOS is excellent for resource-constrained motes, it has well-known limitations:
+
+| Limitation | Why it matters |
+|------------|----------------|
+| **No preemption** | A long-running task blocks the entire system — tasks must be kept short and split manually |
+| **No memory protection** | Single address space; a bug in one component can corrupt another's memory |
+| **No dynamic loading** | All code is statically linked at compile time — new components require reflashing the mote |
+| **Steep learning curve** | nesC's component/wiring model is unfamiliar to typical C programmers |
+| **Debugging is difficult** | No standard debugger; printf-style debugging is limited by serial bandwidth and memory |
+| **No standard file system / heap** | No `malloc`/`free`; all memory allocation is static |
+| **Limited hardware support** | Designed primarily for Berkeley Mote family (MicaZ, TelosB) — porting to other platforms is non-trivial |
+| **Single-threaded event model** | Concurrency is event-driven only; no traditional multithreading |
+| **Cooperative scheduling** | Tasks must voluntarily yield — a misbehaving task starves the system |
+| **No real-time guarantees** | FIFO task queue with no priorities — unsuitable for hard real-time deadlines |
+
+These limitations are deliberate trade-offs for **ultra-low resource use** (a few KB of RAM, microwatt sleep currents). For applications needing richer OS features, alternatives like **Contiki**, **RIOT**, or **FreeRTOS** are used instead.
 
 ---
 

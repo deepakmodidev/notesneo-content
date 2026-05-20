@@ -1027,6 +1027,49 @@ Scenario:
   This is the "hidden terminal" causing TCP misbehavior.
 ```
 
+#### **Exposed-Terminal Problem (counterpart of hidden terminal)**
+
+The **exposed terminal problem** is the *opposite* situation. A node refrains from transmitting because it overhears a nearby transmission, even though its own transmission would **not** cause a collision at the intended receiver.
+
+```
+Topology:
+  A ─── B ─── C ─── D
+  |<R>|<R>|<R>|
+
+Scenario:
+  B is transmitting to A.
+  C overhears B (since C is in B's range) → C thinks medium is busy.
+  C wants to send to D (D is out of B's range — no collision possible).
+  But C defers transmission → bandwidth wasted, throughput drops.
+```
+
+**Comparison:**
+
+| Aspect | Hidden Terminal | Exposed Terminal |
+|--------|-----------------|------------------|
+| Cause | Receiver hears two senders that can't hear each other | Sender overhears an unrelated transmission |
+| Effect | Collision at receiver | Unnecessary backoff at sender |
+| Symptom | Packet loss | Wasted bandwidth / underutilization |
+
+#### **How to Avoid — RTS/CTS Handshake (IEEE 802.11)**
+
+The classical solution is the **virtual carrier-sensing** mechanism using **RTS (Request-To-Send)** and **CTS (Clear-To-Send)** control frames:
+
+```
+1. Sender → RTS → Receiver       (announces intent + duration)
+2. Receiver → CTS → Sender + all neighbors of receiver
+3. Sender transmits DATA
+4. Receiver → ACK
+```
+
+- **Solves hidden terminal:** Every node within range of the **receiver** hears the CTS and backs off, even if it cannot hear the sender. So node B (hidden from A) hears C's CTS and stays silent.
+- **Partially mitigates exposed terminal:** A node overhearing an RTS (but not a CTS for it) knows the receiver of that conversation is far away, so it *may* still transmit. Pure RTS/CTS doesn't fully solve exposed terminal — protocols like **MACA**, **MACAW**, and **DBTMA (Dual Busy Tone Multiple Access)** add separate busy tones to handle it.
+
+**Additional mitigations:**
+- **NAV (Network Allocation Vector)** — virtual carrier sense using the duration field from RTS/CTS frames.
+- **Directional antennas** — reduce the "exposed" region by transmitting only toward the receiver.
+- **Power control** — adjust transmit power so the interference footprint matches the needed coverage.
+
 ---
 
 ### **5.5 Problem 4: Route Oscillation**

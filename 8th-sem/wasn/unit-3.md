@@ -284,6 +284,25 @@ Single-hop:                     Multi-hop:
 
 ---
 
+### **3.7 Active vs Passive Sensors**
+
+Sensors are also classified by how they **acquire** the physical signal:
+
+| Aspect | **Active Sensors** | **Passive Sensors** |
+|--------|--------------------|---------------------|
+| **Definition** | Emit their own signal/energy and measure what is reflected/returned | Only detect/receive energy that is naturally emitted by the environment |
+| **Energy use** | High — must power the emitter | Low — no emission, only sensing |
+| **Examples** | Radar, LIDAR, ultrasonic range finder, active IR (motion), sonar | Thermometer, photodiode, microphone, humidity sensor, passive IR (PIR) |
+| **Operating principle** | Transmit signal → wait for echo / reflection → measure delay or intensity | Capture ambient signal (light, heat, sound, vibration) directly |
+| **Independence** | Works in darkness / no ambient signal needed | Depends on natural source (sunlight, body heat, ambient sound) |
+| **Range** | Controllable (depends on emitter power) | Bounded by ambient signal strength |
+| **Stealth** | Detectable (emissions can be sensed by others) | Undetectable (no emission) |
+| **Use case in WSN** | Object detection, distance measurement, intrusion | Temperature monitoring, light sensing, audio surveillance |
+
+**Quick recall:** *Active = emits + measures echo. Passive = listens only.*
+
+---
+
 ## **Section 4: Architecture of Sensor Network**
 
 > PYQ: Elaborate the sensor network architecture with a diagram. (May 2025, Dec 2025, 7 marks)  
@@ -407,6 +426,29 @@ Physical World
 [User Application]
      (Query, visualization, alerts)
 ```
+
+#### **Data Relaying in WSN**
+
+**Data relaying** is the process by which an intermediate sensor node forwards a packet — that it did not originate — toward the sink (base station) on behalf of another node. Because individual sensor nodes have **limited transmission range** and the sink is usually far away, packets must traverse the network in a **multi-hop** fashion: each node along the path *relays* the data for its neighbors.
+
+```
+[Source Node] --hop1--> [Relay 1] --hop2--> [Relay 2] --hop3--> [Sink]
+                            ^                   ^
+                            |                   |
+                        forwards            forwards
+                       other nodes'        other nodes'
+                          data                data
+```
+
+**Why data relaying is needed:**
+- **Range limitation** — direct sensor-to-sink communication would require high transmit power that drains batteries.
+- **Energy efficiency** — short multi-hop transmissions cost less total energy than one long single-hop transmission.
+- **Coverage** — extends the reachable area beyond any single node's radio range.
+
+**Key concerns:**
+- **Energy hole problem** — nodes nearest the sink relay everyone's data and die first.
+- **Load balancing** — routing protocols rotate relay duty to extend network lifetime.
+- **Reliability** — relay node failure breaks the path; multipath/redundant routing helps.
 
 ---
 
@@ -622,6 +664,44 @@ The **Medium Access Control (MAC) layer** controls how sensor nodes share the wi
 - **Latency** — acceptable delay for data delivery
 - **Scalability** — support varying network sizes
 - **Adaptability** — handle changes in network topology
+
+---
+
+### **6.1.1 Design Goals of MAC Protocol for Ad-Hoc Networks**
+
+A MAC protocol for an ad-hoc / sensor network must satisfy the following **design goals**:
+
+1. **Distributed operation** — no central coordinator (no AP / base station); every node decides on its own.
+2. **Energy efficiency** — minimize power-hungry states (idle listening, overhearing, control overhead).
+3. **Fair channel access** — give every node a reasonable share of bandwidth without starvation.
+4. **High throughput & low latency** — maximize successful transmissions and minimize delivery delay.
+5. **Support for QoS** — provide differentiated service for real-time vs best-effort traffic.
+6. **Scalability** — performance must not degrade sharply as node density or network size grows.
+7. **Adaptability to mobility** — handle topology changes from node movement, joins, and failures.
+8. **Hidden / exposed terminal handling** — coordinate transmissions to avoid collisions at the receiver and to avoid unnecessary backoff.
+9. **Synchronization tolerance** — operate with minimal or no global clock synchronization.
+10. **Time-bounded delivery (where required)** — for real-time data such as alerts.
+
+---
+
+### **6.1.2 Issues / Challenges in Designing MAC for Ad-Hoc Networks**
+
+The above goals are difficult because of the following **design issues** unique to ad-hoc networks:
+
+| Issue | Why it matters |
+|------|----------------|
+| **Shared, error-prone wireless medium** | Multipath fading, interference cause packet loss not seen in wired MACs |
+| **Hidden terminal problem** | Two senders out of each other's range collide at the common receiver |
+| **Exposed terminal problem** | Sender unnecessarily defers because it overhears an unrelated transmission |
+| **Lack of central coordinator** | Cannot rely on AP scheduling — every node must negotiate access |
+| **Mobility-induced topology changes** | Neighbor lists keep changing; static schedules go stale |
+| **Energy constraint** | Battery-powered nodes — cannot use power-hungry MACs like full-duplex carrier sense |
+| **Time synchronization difficulty** | TDMA-style slotting needs synchronization that is expensive in ad-hoc settings |
+| **Half-duplex radio** | Most radios cannot transmit and receive simultaneously — collision detection is impossible (CSMA/CD doesn't work) |
+| **Bandwidth limitation** | Wireless capacity is far below wired; control overhead becomes significant |
+| **QoS support** | Hard to guarantee delay/jitter bounds on a shared, unreliable channel |
+
+These constraints rule out classical Ethernet-style CSMA/CD and force MAC designs to use **CSMA/CA**, **RTS/CTS**, **scheduled (TDMA)**, **hybrid** (Z-MAC), or **duty-cycled** (S-MAC, B-MAC) approaches.
 
 ---
 
